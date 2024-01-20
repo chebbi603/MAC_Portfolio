@@ -1,18 +1,28 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
+  overscroll-behavior: none;
 }
-
-.App-logo {
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('../src/assets/satoshi.ttf') format('truetype');
+}
+.Applogo {
   height: 40vmin;
+  position: relative;
   pointer-events: none;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .Applogo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.row{
+  display: grid ;
+  grid-template-columns: repeat(3,1fr);
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

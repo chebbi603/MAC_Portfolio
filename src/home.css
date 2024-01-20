@@ -1,10 +1,13 @@
 .header{
     display: flex;
     flex-direction: row;
-    margin-left: 5vw;
+    margin-left: 6vw;
     gap:0.5vw;
     position: absolute;
     top: 5%;
+}
+.header-logo{
+    scale: 0.9;
 }
 .landing-container{
     position: relative;
@@ -20,33 +23,103 @@
 }
 .header-text{
     color: #FFF;
-    font-family: Satoshi, sans-serif;
+    font-family: "Satoshi Variable", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
-    letter-spacing: -1.36px;
 }
 .esmi{
-    position: absolute;
-    top: 30%;
-    margin-left: 5vw;
+    margin-left: 1vw;
+    transition-duration: 0.1s;
 }
 .esmi-lakab{
     color: #FFF;
-    font-family: Satoshi, sans-serif;
+    font-family: "Satoshi Variable", sans-serif;
     font-size: 100px;
-    font-style: italic;
     text-align: left;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 0;
 }
 .esmi-esm{
     color: #FFF;
-    font-family: Satoshi, sans-serif;
+    font-family: "Satoshi Variable", sans-serif;
     font-size: 90px;
     text-align: left;
-    font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 0;
+}
+.desc-star{
+    height: 2rem;
+}
+.desc-text{
+    color: #FFF;
+    margin: 0;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+}
+.desc-role{
+    color: #FFF;
+    margin: 0;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+}
+.desc-role:after{
+    content:"UX/UI Designer";
+    animation: changeRole 2s ease-in infinite ;
+}
+@keyframes changeRole {
+    0%{
+        content:"UX/UI Designer";
+    }
+    50%{
+        content:"Developer";
+    }
+}
+
+.role{
+    display: flex;
+    flex-direction: row;
+    height: min-content;
+    gap:1vw;
+    margin-top: -2rem;
+    margin-left: 1vw;
+    transition-duration: 0.1s;
+}
+.social-container{
+    margin-top: 1rem;
+    padding: 1vw;
+    width: min-content;
+    height: min-content;
+    transition-duration: 0.1s;
+}
+.socials{
+    display: flex;
+    width: min-content;
+    flex-direction: row;
+    position: relative;
+    padding: 10px 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8vw;
+    border-radius: 56px;
+    border: 3px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(45px);
+}
+.social-icon{
+    position: relative;
+    pointer-events: none;
+    width: 3rem;
+}
+
+.content{
+    position: absolute;
+    top:23rem;
+    left:5vw;
+    padding: -5vh;
 }
