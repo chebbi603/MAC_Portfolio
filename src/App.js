@@ -7,6 +7,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useRef,useLayoutEffect} from "react";
 import AboutMe from './aboutme/aboutme';
 import Expertise from './expertise/expertise';
+import ProjectsHeader from './projects/projectsheader';
 
 function App() {
 
@@ -139,13 +140,40 @@ function shakeitup(classname){
         start: 'top 30% top',
         end:'top 15%',
         scrub:true,
-        markers:true,
       },
       x:-50,
       opacity:0,
       duration:0.5,
-    });});
-    
+    });
+  });
+  gsap.fromTo(".projectsheader-text",{
+    opacity:0,
+  },
+  {
+    scrollTrigger: {
+      trigger: ".projectsheader-content",
+      start: 'top 80% bottom 10%',
+      end:'bottom 30%',
+      scrub:true,
+      markers:true,
+    },
+    opacity:1,
+    y:600,
+    zIndex:5,
+  })
+  gsap.fromTo(".projectsheader-image",
+    {
+      clipPath:"polygon(30% 10%, 70% 10%, 70% 90%, 30% 90%)"
+    } ,
+    {
+    scrollTrigger: {
+      trigger: ".projectsheader-container",
+      start: 'top 80% ',
+      end:'bottom 15% ',
+      scrub:true,
+    },
+    clipPath: "polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%)",
+  });
   })
   return () => ctx.revert();
 }, []);
@@ -161,7 +189,8 @@ function shakeitup(classname){
           <AboutMe/>
         </section>
         <Expertise/>
-        
+        <ProjectsHeader/>
+        <Expertise/>
       </header>
     </div>
   );

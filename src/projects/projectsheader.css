@@ -1,0 +1,43 @@
+.projectsheader-container{
+    display: flex;
+    width: 85%;
+    padding: 80px 145px;
+    padding-top: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    background: #000;
+    flex-direction: column;
+    gap: 60px;
+}
+.projectsheader-content{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    place-content: center;
+    margin-bottom: 10vh;
+}
+.projectsheader-title{
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+}
+.projectsheader-image{
+    z-index: 0;
+    position: relative;
+}
+.myloc{
+    color: rgb(139, 139, 139);
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 18px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 300;
+    padding: 0;
+    padding-top: 3vh;
+    margin: 0;
+    line-height: 100%;
+}
