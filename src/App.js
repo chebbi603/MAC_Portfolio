@@ -4,7 +4,8 @@ import Lenis from "@studio-freight/lenis";
 import Home from "./home";
 import {gsap} from 'gsap';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useEffect} from "react";
+import {useLayoutEffect} from "react";
+import AboutMe from './pages/aboutme';
 
 function App() {
 
@@ -26,7 +27,6 @@ function App() {
 
 function shakeitup(classname){
   document.querySelectorAll(classname).forEach(btn=>{
-    var rect = btn.getBoundingClientRect();
     btn.addEventListener('mousemove',(e)=>{
       let x = e.offsetX
       let y = e.offsetY-window.scrollY
@@ -39,14 +39,14 @@ function shakeitup(classname){
     })
     btn.addEventListener('mouseout', (e)=>{
       btn.style.transform=``;
-      window.scrollBy(0, 0.0001);
     })
   });
 }
 
 
-  useEffect(() => {
-    // shakeitup('.social-container');
+  useLayoutEffect(() => {
+     shakeitup('.social-container');
+    let ctx = gsap.context(() => {
     gsap.to('.social-container', {
       scrollTrigger: {
         trigger: '.social-container',
@@ -84,7 +84,20 @@ function shakeitup(classname){
       y: -100, // Adjust the value for the desired effect
     });
 
-})
+    gsap.to('.aboutme-sec1', {
+      scrollTrigger: {
+        trigger: '.aboutme-textcontainer',
+        pin: '.aboutme-sec1',
+        start: 'top 20%',
+        end: 'bottom 80%',
+        markers:true,
+        scrub: true,
+      },
+      y:-100,
+    });
+  })
+  return () => ctx.revert();
+}, []);
 
 
   return (
@@ -93,25 +106,9 @@ function shakeitup(classname){
         <section className={"section1"}>
           <Home/>
         </section>
-        <section data-speed={"2"} className={"section2"}>
-          <img src={logo} className="Applogo" alt="logo" />
-          <img src={logo} className="Applogo" alt="logo" />
-          <img src={logo} className="Applogo" alt="logo" />
-          <img src={logo} className="Applogo" alt="logo" />
-          <img src={logo} className="Applogo" alt="logo" />
-          <img src={logo} className="Applogo" alt="logo" />
+        <section>
+          <AboutMe/>
         </section>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
