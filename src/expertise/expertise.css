@@ -1,0 +1,106 @@
+.expertise-container{
+    display: flex;
+    width: 85%;
+    padding: 80px 145px;
+    padding-top: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    background: #FFF;
+    flex-direction: column;
+    gap: 60px;
+}
+.expertise-textcontainer{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    gap: 120px;
+}
+.expertise-sec1{
+    display: flex;
+    width: 100%;
+    z-index: 1;
+    padding-top: 15px;
+    padding-bottom: 30px ;
+    align-items: start;
+    flex-direction: column;
+}
+
+.expertise-list{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.expertiseelement{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.expertise-title{
+    color: black;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 64px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 600;
+    padding: 0;
+    padding-top: 10vh;
+    margin: 0;
+    line-height: 100%;
+}
+.expertise-type{
+    color: black;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 64px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+}
+.expertise-example{
+    color: black;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 24px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+}
+.myloc{
+    color: rgb(139, 139, 139);
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 18px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 300;
+    padding: 0;
+    padding-top: 3vh;
+    margin: 0;
+    line-height: 100%;
+}
+.aboutme-sub{
+    color: black;
+    text-align: left;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -2px;
+}
+.aboutme-detail{
+    color: black;
+    text-align: left;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    padding-top: 15vh;
+    line-height: 150%;
+    margin: 0;
+}

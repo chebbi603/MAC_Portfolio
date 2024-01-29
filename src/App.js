@@ -4,8 +4,9 @@ import Lenis from "@studio-freight/lenis";
 import Home from "./home";
 import {gsap} from 'gsap';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useLayoutEffect} from "react";
-import AboutMe from './pages/aboutme';
+import {useRef,useLayoutEffect} from "react";
+import AboutMe from './aboutme/aboutme';
+import Expertise from './expertise/expertise';
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
     requestAnimationFrame(raf)
   }
   requestAnimationFrame(raf)
-
+  const el = useRef();
+  const q = gsap.utils.selector(el);
 
 
 function shakeitup(classname){
@@ -90,18 +92,67 @@ function shakeitup(classname){
         pin: '.aboutme-sec1',
         start: 'top 20%',
         end: 'bottom 80%',
-        markers:true,
         scrub: true,
       },
       y:-100,
     });
+
+    gsap.to('.expertise-sec1', {
+      scrollTrigger: {
+        trigger: '.expertise-textcontainer',
+        pin: '.expertise-sec1',
+        start: 'top 10%',
+        end: 'bottom 80%',
+        scrub: true,
+      },
+      y:-100,
+    });
+
+  
+    q(".expertiseelement").forEach((circle) => {
+     
+    gsap.fromTo(circle,
+        {
+          opacity:0,
+          x:0,
+        }, 
+        {
+          scrollTrigger: {
+            trigger: circle,
+            start: 'top 100% bottom',
+            end:'top 70%',
+            scrub: true,
+          },
+          x:40,
+          delay:0.5,
+          opacity:1,
+        }
+    );
+    gsap.fromTo(circle,
+      {
+        opacity:1,
+        x:40,
+      } ,
+      {
+      scrollTrigger: {
+        trigger: circle,
+        start: 'top 30% top',
+        end:'top 15%',
+        scrub:true,
+        markers:true,
+      },
+      x:-50,
+      opacity:0,
+      duration:0.5,
+    });});
+    
   })
   return () => ctx.revert();
 }, []);
 
 
   return (
-    <div className="App">
+    <div className="App" ref={el}>
       <header className="App-header">
         <section className={"section1"}>
           <Home/>
@@ -109,6 +160,8 @@ function shakeitup(classname){
         <section>
           <AboutMe/>
         </section>
+        <Expertise/>
+        
       </header>
     </div>
   );
