@@ -8,6 +8,7 @@ import {useRef,useLayoutEffect} from "react";
 import AboutMe from './aboutme/aboutme';
 import Expertise from './expertise/expertise';
 import ProjectsHeader from './projects/projectsheader';
+import ProjectsList from './projects/projectexample';
 
 function App() {
 
@@ -47,8 +48,19 @@ function shakeitup(classname){
 }
 
 
+
   useLayoutEffect(() => {
-     shakeitup('.social-container');
+    
+  const cursor = document.querySelector('.cursor');
+  window.addEventListener("mousemove", function (e){
+      const posX = e.pageX;
+      const posY = e.pageY;
+      cursor.animate({
+        left : `${posX}px`,
+        top: `${posY}px`,
+      },{duration:500, fill:"forwards"});
+    });
+    //shakeitup('.social-container');
     let ctx = gsap.context(() => {
     gsap.to('.social-container', {
       scrollTrigger: {
@@ -146,6 +158,7 @@ function shakeitup(classname){
       duration:0.5,
     });
   });
+
   gsap.fromTo(".projectsheader-text",{
     opacity:0,
   },
@@ -155,7 +168,6 @@ function shakeitup(classname){
       start: 'top 80% bottom 10%',
       end:'bottom 30%',
       scrub:true,
-      markers:true,
     },
     opacity:1,
     y:600,
@@ -174,7 +186,48 @@ function shakeitup(classname){
     },
     clipPath: "polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%)",
   });
+
+  // Projects Animation
+
+  q(".project-container").forEach((circle) => {
+     
+    gsap.fromTo(circle,
+        {
+          opacity:0,
+          x:50,
+        }, 
+        {
+          scrollTrigger: {
+            trigger: circle,
+            start: 'top 100% bottom',
+            end:'top 40%',
+            scrub: true,
+          },
+          x:0,
+          delay:0.5,
+          opacity:1,
+        }
+    );
+    gsap.fromTo(circle,
+      {
+        opacity:1,
+        x:0,
+      } ,
+      {
+      scrollTrigger: {
+        trigger: circle,
+        start: 'bottom 70%',
+        end:'bottom 50%',
+        scrub:true,
+      },
+      x:-50,
+      opacity:0,
+    });
+  });
+
+
   })
+  
   return () => ctx.revert();
 }, []);
 
@@ -182,6 +235,7 @@ function shakeitup(classname){
   return (
     <div className="App" ref={el}>
       <header className="App-header">
+        <div className='cursor'></div>
         <section className={"section1"}>
           <Home/>
         </section>
@@ -190,7 +244,7 @@ function shakeitup(classname){
         </section>
         <Expertise/>
         <ProjectsHeader/>
-        <Expertise/>
+        <ProjectsList/>
       </header>
     </div>
   );

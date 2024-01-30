@@ -1,0 +1,127 @@
+.projects-container{
+    display: flex;
+    width: 85%;
+    padding: 80px 145px;
+    padding-top: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    background: #FFF;
+    flex-direction: column;
+    gap: 60px;
+}
+.projects-textcontainer{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    gap: 120px;
+}
+.projects-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15vh;
+    padding-top: 20vh;
+}
+.project-container{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.project-title{
+    color: black;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 64px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 600;
+    padding: 0;
+    padding-top: 10vh;
+    margin: 0;
+    line-height: 100%;
+}
+.project-info{
+    color: #111516;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 20px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+}
+.project-description{
+    font-family: "Satoshi Variable", sans-serif;
+    color: #111516;
+    font-family: "Satoshi Variable";
+    font-size: 32px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 130%
+}
+
+
+.myloc{
+    color: rgb(139, 139, 139);
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 18px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 300;
+    padding: 0;
+    padding-top: 3vh;
+    margin: 0;
+    line-height: 100%;
+}
+
+
+.project-images{
+    display: flex;
+    flex-direction: row;
+    gap:1vw;
+
+    .project-image-container{
+        position: relative;
+    }
+    .project-image-icon{
+        width: 60px;
+        height: 60px;
+        border: 2px solid #7E848A;
+        background: #FFEDC7;
+    }
+    .project-image-img{
+        position: absolute;
+        overflow: hidden;
+        width: 400px;
+        height: 200px;
+        z-index: 3;
+        visibility: hidden;
+        transform: scale(0.6);
+        opacity: 0;
+        transition: opacity 0.3 ease, transform 0.3 ease, visibility 0.3 ease;
+
+        &.active{
+            visibility: visible;
+            transform: scale(1);
+            opacity: 1;
+        }
+        img{
+            position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            max-width:100%;
+            max-height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;  
+        }
+    }
+}

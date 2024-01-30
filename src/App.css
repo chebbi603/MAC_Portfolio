@@ -3,6 +3,7 @@
   overflow-x: hidden;
   overscroll-behavior: none;
   overflow-y: hidden;
+  
 }
 @font-face {
   font-family: 'Satoshi Variable';
@@ -13,6 +14,18 @@
   position: relative;
   pointer-events: none;
 
+}
+.cursor{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  mix-blend-mode: exclusion;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  z-index: 500;
 }
 
 @media (prefers-reduced-motion: no-preference) {
