@@ -14,13 +14,13 @@
     flex-direction: column;
     width: 100%;
     padding: 0;
-    gap: 120px;
+    padding-top: 10vh;
+    gap: 20px;
 }
 .projects-list{
     display: flex;
     flex-direction: column;
-    gap: 15vh;
-    padding-top: 20vh;
+    gap: 35vh;
 }
 .project-container{
     display: flex;
@@ -35,6 +35,19 @@
     text-align: left;
     font-style: normal;
     font-weight: 600;
+    padding: 0;
+    padding-top: 10vh;
+    margin: 0;
+    line-height: 100%;
+}
+.projects-sub{
+    color: black;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 52px;
+    width: fit-content;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
     padding: 0;
     padding-top: 10vh;
     margin: 0;
@@ -82,31 +95,43 @@
 .project-images{
     display: flex;
     flex-direction: row;
-    gap:1vw;
+    margin-top: 2vh;
+    gap:2vw;
 
     .project-image-container{
         position: relative;
+        
     }
     .project-image-icon{
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         border: 2px solid #7E848A;
-        background: #FFEDC7;
+        transform: scale(1);
+        transition-duration: 0.5s;
+        opacity: 1;
+        &.active{
+            transform: scale(0.9);
+            transition-duration: 0.5s;
+            opacity: 0.8;
+        }
     }
     .project-image-img{
         position: absolute;
         overflow: hidden;
-        width: 400px;
-        height: 200px;
+        width: 800px;
+        height: 600px;
+        border: 2px solid #7E848A;
         z-index: 3;
         visibility: hidden;
         transform: scale(0.6);
         opacity: 0;
         transition: opacity 0.3 ease, transform 0.3 ease, visibility 0.3 ease;
-
+        pointer-events: none;
+        transition-duration: 0.3s;
         &.active{
             visibility: visible;
             transform: scale(1);
+            transition-duration: 0.3s;
             opacity: 1;
         }
         img{

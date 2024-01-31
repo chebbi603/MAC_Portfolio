@@ -1,16 +1,19 @@
 import "./projectexample.css"
 import ProjectTemplate from "./projecttemplate";
+import projects from "./projects.json"
 
 function ProjectsList() {
+
+
     return(
         <div className="projects-container" >
             <div className="projects-textcontainer">
+                
+                <p className="projects-sub">Projects I have worked on:</p>
                 <div className="projects-list">
-                    <ProjectTemplate/>
-                    <ProjectTemplate/>
-                    <ProjectTemplate/>
-                    <ProjectTemplate/>
-                    <ProjectTemplate/>
+                    ${projects.map((p) =>{
+                        return(<ProjectTemplate id={p.id} name={p.projectName} hint={p.projectInfo} desc={p.projectDesc} colors={p.projectColors} images={p.projectImages}/>)
+                    })}
                 </div>
             </div>
             <div><p className="myloc">PROJECTS</p></div>

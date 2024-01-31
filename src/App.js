@@ -6,6 +6,7 @@ import {gsap} from 'gsap';
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useRef,useLayoutEffect} from "react";
 import AboutMe from './aboutme/aboutme';
+import Contact from './contact/contact';
 import Expertise from './expertise/expertise';
 import ProjectsHeader from './projects/projectsheader';
 import ProjectsList from './projects/projectexample';
@@ -173,6 +174,22 @@ function shakeitup(classname){
     y:600,
     zIndex:5,
   })
+
+  gsap.fromTo(".contact-text",{
+    opacity:0,
+  },
+  {
+    scrollTrigger: {
+      trigger: ".contact-content",
+      start: 'top 80% bottom 10%',
+      end:'bottom 90%',
+      scrub:true,
+    },
+    opacity:1,
+    y:550,
+    zIndex:5,
+  })
+
   gsap.fromTo(".projectsheader-image",
     {
       clipPath:"polygon(30% 10%, 70% 10%, 70% 90%, 30% 90%)"
@@ -188,6 +205,76 @@ function shakeitup(classname){
   });
 
   // Projects Animation
+  gsap.fromTo(".projects-sub",
+    {
+      opacity:0,
+      x:50,
+    }, 
+    {
+      scrollTrigger: {
+        trigger: ".projects-sub",
+        start: 'top 100% bottom',
+        end:'top 10%',
+        scrub: true,
+      },
+      x:0,
+      y:0,
+      delay:2,
+      opacity:1,
+    }
+);
+  gsap.to(".projects-sub",{
+    scrollTrigger: {
+    trigger: '.projects-textcontainer',
+    pin: '.projects-sub',
+    start: 'top 5%',
+    end: 'bottom 80%',
+    scrub: true,
+  },
+  y:-100,
+
+  })
+
+  //contact page
+
+  gsap.fromTo(".contact-image-l",
+    {
+      opacity:0,
+      x:-50,
+      y:-100,
+    }, 
+    {
+      scrollTrigger: {
+        trigger: ".contact-container",
+        start: 'top 70% bottom',
+        end:'bottom 100%',
+        scrub: true,
+      },
+      x:60,
+      y:-100,
+      opacity:1,
+    }
+);
+gsap.fromTo(".contact-image-r",
+    {
+      opacity:0,
+      x:50,
+      y:-100,
+    }, 
+    {
+      scrollTrigger: {
+        trigger: ".contact-container",
+        start: 'top 70% bottom',
+        end:'bottom 100%',
+        scrub: true,
+      },
+      x:-60,
+      y:-100,
+      opacity:1,
+    }
+);
+
+  //
 
   q(".project-container").forEach((circle) => {
      
@@ -200,11 +287,11 @@ function shakeitup(classname){
           scrollTrigger: {
             trigger: circle,
             start: 'top 100% bottom',
-            end:'top 40%',
+            end:'top 30%',
             scrub: true,
           },
           x:0,
-          delay:0.5,
+          delay:2,
           opacity:1,
         }
     );
@@ -217,7 +304,7 @@ function shakeitup(classname){
       scrollTrigger: {
         trigger: circle,
         start: 'bottom 70%',
-        end:'bottom 50%',
+        end:'bottom 30%',
         scrub:true,
       },
       x:-50,
@@ -245,6 +332,7 @@ function shakeitup(classname){
         <Expertise/>
         <ProjectsHeader/>
         <ProjectsList/>
+        <Contact/>
       </header>
     </div>
   );

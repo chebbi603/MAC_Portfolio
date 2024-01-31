@@ -21,7 +21,7 @@ My passion for creating software solutions started back in 2018. I have created 
 <br></br><br></br>
 The urge of creating better designs for my apps led me to develop Design skills. My first UX/UI design was published on Dribbble in 2019. I have now over 10000 followers and over 55000 shot views.
 <br></br><br></br>
-I am currently opting for a Bachelor’s degree in Computer Science Engineering and studying in the University of Debrecen, Hungary
+I am currently opting for a Bachelor’s degree in Computer Science Engineering and studying in the University of Debrecen, Hungary.
 I am also working as a freelancer on Upwork. I have earned a Top Rated Badge with a 100% Job success rate after working with different clients from different countries.</p>
                 </div>
             </div>

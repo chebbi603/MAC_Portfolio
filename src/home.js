@@ -7,7 +7,8 @@ import descstar from "../src/assets/star.svg";
 import fb from "../src/assets/fb.svg";
 import lin from "../src/assets/linkedin.svg";
 import dri from "../src/assets/dribbble.svg";
-
+import upw from "../src/assets/upwork.svg";
+import insta from "../src/assets/insta.svg";
 
 function Home(){
 
@@ -19,7 +20,7 @@ function Home(){
             </div>
             <div className={"home-content-data"}>
             <div className={"header"}>
-                <img src={logosmall} className="header-logo" alt={"byMalek"}/>
+                <img src={logosmall} className="header-logo" alt={"byMe"}/>
                 <p className={"header-text"}>Awesomeness</p>
             </div>
             <div className={"content"}>
@@ -37,6 +38,8 @@ function Home(){
                 <img className={"social-icon"} src={fb}/>
                 <img className={"social-icon"} src={lin}/>
                 <img className={"social-icon"} src={dri}/>
+                <img className={"social-icon"} src={upw}/>
+                <img className={"social-icon"} src={insta}/>
             </div>
             </div>
             </div>
