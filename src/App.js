@@ -59,7 +59,7 @@ function shakeitup(classname){
       cursor.animate({
         left : `${posX}px`,
         top: `${posY}px`,
-      },{duration:500, fill:"forwards"});
+      },{duration:300, fill:"forwards"});
     });
     //shakeitup('.social-container');
     let ctx = gsap.context(() => {
@@ -90,7 +90,7 @@ function shakeitup(classname){
       },
       y: -100, // Adjust the value for the desired effect
     });
-    gsap.to('.landing-img', {
+    gsap.to('.landing-container', {
       scrollTrigger: {
         trigger: '.landing-img',
         start: 'top',

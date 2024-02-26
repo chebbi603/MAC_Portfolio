@@ -15,79 +15,75 @@
     height: 100vh;
     overflow: hidden;
 }
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    visibility: visible;
+    top: 0;
+    right: 0;
+}
+
 .landing-img{
     position: absolute;
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+    object-position: 70% 50%;
     top: 0;
     right: 0;
 }
 .header-text{
     color: #FFF;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
 }
 .esmi{
-    margin-left: 1vw;
+    margin-left: 1vw ;
+    gap: 3svh;
     transition-duration: 0.1s;
 }
 .esmi-lakab{
     color: #FFF;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 100px;
+    font-size: 18svw;
     text-align: left;
+    margin: 0%;
+    line-height: 1;
     font-weight: 600;
-    line-height: 0;
 }
 .esmi-esm{
     color: #FFF;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 90px;
+    font-size: 18svw;
     text-align: left;
     font-weight: 600;
-    line-height: 0;
+    margin: 0;
+    line-height: 1;
 }
 .desc-star{
-    height: 2rem;
+    height: 4svw;
 }
 .desc-text{
     color: #FFF;
+    text-align: left;
     margin: 0;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 50px;
+    font-size: 9svw;
     font-style: normal;
     font-weight: 400;
-}
-.desc-role{
-    color: #FFF;
-    margin: 0;
-    font-family: "Satoshi Variable", sans-serif;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-}
-.desc-role:after{
-    content:"UX/UI Designer";
-    animation: changeRole 2s ease-in infinite ;
-}
-@keyframes changeRole {
-    0%{
-        content:"UX/UI Designer";
-    }
-    50%{
-        content:"Developer";
-    }
 }
 
 .role{
     display: flex;
     flex-direction: row;
     height: min-content;
-    gap:1vw;
-    margin-top: -2rem;
-    margin-left: 1vw;
+    gap:0.5vw;
+    margin-top: 0;
     transition-duration: 0.1s;
 }
 .social-container{
@@ -105,7 +101,7 @@
     padding: 10px 10px;
     justify-content: space-between;
     align-items: center;
-    gap: 0.8vw;
+    gap:5svw ;
     border-radius: 56px;
     border: 3px solid rgba(255, 255, 255, 0.06);
     background: rgba(255, 255, 255, 0.05);
@@ -114,12 +110,141 @@
 .social-icon{
     position: relative;
     pointer-events: none;
-    width: 3rem;
+    width: 2.5rem;
 }
 
 .content{
     position: absolute;
-    top:23rem;
+    top:45svh;
     left:5vw;
-    padding: -5vh;
+}
+/* icons are not well adjusted */
+@media (max-height: 700px) {
+    .content{
+        position: absolute;
+        top:40svh;
+        left:5vw;
+    }
+    
+}
+
+@media (min-width: 520px) {
+    .landing-img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 70% 0%;
+        top: 0;
+        right: 0;
+    }
+    .desc-star{
+        height: 1rem;
+    }
+    .socials{
+        gap: 2vw;
+    }
+    .content{
+        position: absolute;
+        top:45svh;
+        left:5vw;
+        padding: -5vh;
+    }
+    
+    .esmi-lakab{
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 15svw;
+        text-align: left;
+        font-weight: 600;
+    }
+    .esmi-esm{
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 11svw;
+        text-align: left;
+        font-weight: 600;
+    }
+    .desc-text{
+        color: #FFF;
+        text-align: left;
+        margin: 0;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 6svw;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+@media (min-width: 850px) {
+    .esmi-lakab{
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 12svw;
+        text-align: left;
+        font-weight: 600;
+    }
+    .esmi-esm{
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 10svw;
+        text-align: left;
+        font-weight: 600;
+    }
+    .desc-text{
+        color: #FFF;
+        text-align: left;
+        margin: 0;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 5svw;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+@media (min-width: 1024px) {
+
+    .socials{
+        gap: 0.8vw;
+    }
+    .desc-star{
+        height: 2rem;
+    }
+    .social-icon{
+        position: relative;
+        pointer-events: none;
+        width: 3rem;
+    }
+    
+    .esmi-lakab{
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 7rem;
+        text-align: left;
+        font-weight: 600;
+    }
+    .esmi-esm{
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 6rem;
+        text-align: left;
+        font-weight: 600;
+    }
+    .desc-text{
+        color: #FFF;
+        text-align: left;
+        margin: 0;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+@media (min-width: 1400px) {
+    .overlay{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0);
+        top: 0;
+        right: 0;
+    }
 }

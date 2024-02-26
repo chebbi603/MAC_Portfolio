@@ -17,11 +17,12 @@ function Home(){
             <div className={"home-content"}></div>
             <div className="landing-container">
                 <img src={landingimg} className="landing-img" alt={"byMalek"}/>
+                <div className="overlay"></div>
             </div>
             <div className={"home-content-data"}>
             <div className={"header"}>
                 <img src={logosmall} className="header-logo" alt={"byMe"}/>
-                <p className={"header-text"}>Awesomeness</p>
+                <p className={"header-text"}>Portfolio</p>
             </div>
             <div className={"content"}>
             <div className={"esmi"}  >
@@ -30,8 +31,7 @@ function Home(){
             </div>
             <div className={"role"} >
                 <img className={"desc-star"} src={descstar}/>
-                <p className={"desc-text"}>Freelance</p>
-                <p className={"desc-role"}></p>
+                <p className={"desc-text"}>Freelance UX/UI Designer & Developer</p>
             </div>
             <div className={"social-container"} >
             <div className={"socials"}>
