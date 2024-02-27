@@ -115,6 +115,9 @@
 
 .content{
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1svh;
     top:45svh;
     left:5vw;
 }
@@ -122,6 +125,9 @@
 @media (max-height: 700px) {
     .content{
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 0svh;
         top:40svh;
         left:5vw;
     }
