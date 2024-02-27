@@ -9,7 +9,9 @@ import AboutMe from './aboutme/aboutme';
 import Contact from './contact/contact';
 import Expertise from './expertise/expertise';
 import ProjectsHeader from './projects/projectsheader';
+import AboutMeMobile from  './aboutme/aboutme_mobile';
 import ProjectsList from './projects/projectexample';
+import MediaQuery from 'react-responsive';
 
 function App() {
 
@@ -99,7 +101,6 @@ function shakeitup(classname){
       },
       y: -100, // Adjust the value for the desired effect
     });
-
     gsap.to('.aboutme-sec1', {
       scrollTrigger: {
         trigger: '.aboutme-textcontainer',
@@ -110,7 +111,7 @@ function shakeitup(classname){
       },
       y:-100,
     });
-
+   
     gsap.to('.expertise-sec1', {
       scrollTrigger: {
         trigger: '.expertise-textcontainer',
@@ -327,7 +328,12 @@ gsap.fromTo(".contact-image-r",
           <Home/>
         </section>
         <section>
+          <MediaQuery query="(max-device-width: 800px)">
+          <AboutMeMobile/>
+          </MediaQuery>
+          <MediaQuery query="(min-device-width: 800px)">
           <AboutMe/>
+          </MediaQuery>
         </section>
         <Expertise/>
         <ProjectsHeader/>
