@@ -9,6 +9,7 @@ import lin from "../src/assets/linkedin.svg";
 import dri from "../src/assets/dribbble.svg";
 import upw from "../src/assets/upwork.svg";
 import insta from "../src/assets/insta.svg";
+import MagneticButton from "./gsap";
 
 function Home(){
 
@@ -33,6 +34,7 @@ function Home(){
                 <img className={"desc-star"} src={descstar}/>
                 <p className={"desc-text"}>Freelance UX/UI Designer & Developer</p>
             </div>
+            <MagneticButton>
             <div className={"social-container"} >
             <div className={"socials"}>
                 <a className={"social-link"} target="_blank" href="https://www.facebook.com/chebbimedayoub">
@@ -49,6 +51,7 @@ function Home(){
                 <img className={"social-icon"} src={insta}/></a>
             </div>
             </div>
+            </MagneticButton>
             </div>
             </div>
         </div>

@@ -55,33 +55,8 @@ function shakeitup(classname){
   useLayoutEffect(() => {
     //shakeitup('.social-container');
     let ctx = gsap.context(() => {
-    gsap.to('.social-container', {
-      scrollTrigger: {
-        trigger: '.social-container',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-      y: -100, // Adjust the value for the desired effect
-    });
-    gsap.to('.esmi',{
-    scrollTrigger: {
-      trigger: '.esmi',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true,
-    },
-    y: -100, // Adjust the value for the desired effect
-  });
-    gsap.to('.role', {
-      scrollTrigger: {
-        trigger: '.role',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-      y: -100, // Adjust the value for the desired effect
-    });
+    
+ 
     gsap.to('.landing-container', {
       scrollTrigger: {
         trigger: '.landing-img',
@@ -89,7 +64,7 @@ function shakeitup(classname){
         end: 'bottom',
         scrub: true,
       },
-      y: -100, // Adjust the value for the desired effect
+      y: -150, // Adjust the value for the desired effect
     });
     gsap.to('.aboutme-sec1', {
       scrollTrigger: {
@@ -106,8 +81,8 @@ function shakeitup(classname){
       scrollTrigger: {
         trigger: '.expertise-textcontainer',
         pin: '.expertise-sec1',
-        start: 'top 10%',
-        end: 'bottom 30%',
+        start: 'top 5%',
+        end: 'bottom 20%',
         scrub: true,
       },
       y:-100,
@@ -172,12 +147,12 @@ function shakeitup(classname){
   {
     scrollTrigger: {
       trigger: ".contact-content",
-      start: 'top 80%',
+      start: '20% 60%',
       end:'bottom 90%',
       scrub:true,
     },
     opacity:1,
-    y:550,
+    y:-100,
     zIndex:5,
   })
 
@@ -233,7 +208,7 @@ function shakeitup(classname){
     trigger: '.projects-textcontainer',
     pin: '.projects-sub',
     start: 'top 5%',
-    end: 'bottom 80%',
+    end: 'bottom 20%',
     scrub: true,
   },
   y:-100,
@@ -241,43 +216,6 @@ function shakeitup(classname){
   })
 
   //contact page
-
-  gsap.fromTo(".contact-image-l",
-    {
-      opacity:0,
-      x:-50,
-      y:-100,
-    }, 
-    {
-      scrollTrigger: {
-        trigger: ".contact-container",
-        start: 'top 70% bottom',
-        end:'bottom 100%',
-        scrub: true,
-      },
-      x:60,
-      y:-100,
-      opacity:1,
-    }
-);
-gsap.fromTo(".contact-image-r",
-    {
-      opacity:0,
-      x:50,
-      y:-100,
-    }, 
-    {
-      scrollTrigger: {
-        trigger: ".contact-container",
-        start: 'top 70% bottom',
-        end:'bottom 100%',
-        scrub: true,
-      },
-      x:-60,
-      y:-100,
-      opacity:1,
-    }
-);
 
   //
 
@@ -334,6 +272,8 @@ gsap.fromTo(".contact-image-r",
             
           }}
           innerStyle={{
+            
+            mixBlendMode: 'difference',
             backgroundColor:'#fff'
           }}
           clickables={[
@@ -348,10 +288,10 @@ gsap.fromTo(".contact-image-r",
           <Home/>
         </section>
         <section>
-          <MediaQuery query="(max-device-width: 800px)">
+          <MediaQuery query="(max-device-width: 1000px)">
           <AboutMeMobile/>
           </MediaQuery>
-          <MediaQuery query="(min-device-width: 800px)">
+          <MediaQuery query="(min-device-width: 1000px)">
           <AboutMe/>
           </MediaQuery>
         </section>

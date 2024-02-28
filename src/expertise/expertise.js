@@ -5,7 +5,7 @@ function Expertise() {
         <div className="expertise-container" >
             <div className="expertise-textcontainer">
                 <div className="expertise-sec1">
-                    <p className="expertise-title">I have worked on:</p>
+                    <p className="expertise-title">I have worked on</p>
                 </div>
                 <div className="expertise-list">
                     <div className="expertiseelement">

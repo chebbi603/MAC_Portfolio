@@ -10,32 +10,40 @@ import insta from "../assets/insta.svg";
 
 import "../home.css"
 import { useEffect } from "react";
+import MagneticButton from "../gsap";
 
 function Contact() {
-    return(
+    return (
         <div className="contact-container" >
             <div className="contact-content">
                 <div className="contact-text">
-                    <p className="contact-title">REACH OUT</p>
+                    <p className="contact-title">CONTACT</p>
                     <p className="projectsheader-p">You can find me on:</p>
-                    <div className={"contact-social-container"} >
-                        <div className={"socials"}>
-                            <img className={"social-icon"} src={fb}/>
-                            <img className={"social-icon"} src={lin}/>
-                            <img className={"social-icon"} src={dri}/>
-                            <img className={"social-icon"} src={upw}/>
-                            <img className={"social-icon"} src={insta}/>
+                    <MagneticButton>
+                        <div className={"social-container"} >
+                            <div className={"socials"}>
+                                <a className={"social-link"} target="_blank" href="https://www.facebook.com/chebbimedayoub">
+                                    <img className={"social-icon"} src={fb} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://www.linkedin.com/in/mohamed-ayoub-chebbi/">
+                                    <img className={"social-icon"} src={lin} /></a>
+                                <a className={"social-link"} target="_blank" href="https://www.dribbble.com/chebbimedayoub">
+                                    <img className={"social-icon"} src={dri} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://www.upwork.com/freelancers/ayoubc4">
+                                    <img className={"social-icon"} src={upw} /></a>
+                                <a className={"social-link"} target="_blank" href="https://www.instagram.com/chebbimedayoub/">
+                                    <img className={"social-icon"} src={insta} /></a>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                    <img src={logosmall} className="header-logo" alt={"byMe"}/>
-                    <div><p className="myloc">Designed & Developed with 💖 by Chebbi Mohamed Ayoub</p></div>
-                <div className="contact-imagecontainer">
-                    <img src={upworkimg} className="contact-image-l" alt="prjhdrimg"></img>
-                    <img src={dribbbleimg} className="contact-image-r" alt="prjhdrimg"></img>
+                    </MagneticButton>
                 </div>
+                    <div className="final-contact">
+                        <img src={logosmall} className="header-logo" alt={"byMe"} />
+                        <p className="contact-myloc">Designed & Developed with 💖 by Chebbi Mohamed Ayoub</p>
+                    </div>
             </div>
-        </div>
-    )
+            </div>
+            )
 }
-export default Contact;
+            export default Contact;

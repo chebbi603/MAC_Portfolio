@@ -14,7 +14,7 @@
 .landing-container {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     overflow: hidden;
 }
 
@@ -94,6 +94,7 @@
     height: min-content;
     gap: 2vw;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .social-container {
@@ -135,19 +136,30 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 1svh;
+    gap: 3svh;
     top: 45svh;
     left: 5vw;
 }
 
 /* icons are not well adjusted */
-@media (max-height: 700px) {
+@media (max-height: 800px) {
     .content {
         position: absolute;
         display: flex;
         flex-direction: column;
-        gap: 0svh;
-        top: 40svh;
+        gap: 3svh;
+        top: 35svh;
+        left: 5vw;
+    }
+
+}
+
+@media (min-width: 400px) {
+    .content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 35svh;
         left: 5vw;
     }
 
@@ -174,7 +186,7 @@
 
     .content {
         position: absolute;
-        top: 45svh;
+        top: 40svh;
         left: 5vw;
         padding: -5vh;
     }

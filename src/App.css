@@ -1,8 +1,10 @@
 .App {
   text-align: center;
-  overflow-x: hidden;
   overscroll-behavior: none;
-  overflow-y: hidden;
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 @font-face {
   font-family: 'Satoshi Variable';
