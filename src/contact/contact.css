@@ -4,7 +4,8 @@
     padding: 80px 145px;
     padding-top: 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-    background: #111516;
+    background-image: url("../assets/wpp.png");
+    background-size: cover;
     flex-direction: column;
     gap: 60px;
 }

@@ -34,7 +34,7 @@ function Expertise() {
                     </div>
                 </div>
             </div>
-            <div><p className="myloc">EXPERTISE</p></div>
+            <div><p className="expertise-myloc">EXPERTISE</p></div>
         </div>
     )
 }

@@ -1,21 +1,24 @@
-.header{
+.header {
     display: flex;
     flex-direction: row;
     margin-left: 6vw;
-    gap:0.5vw;
+    gap: 0.5vw;
     position: absolute;
     top: 5%;
 }
-.header-logo{
+
+.header-logo {
     scale: 0.9;
 }
-.landing-container{
+
+.landing-container {
     position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
-.overlay{
+
+.overlay {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -25,7 +28,7 @@
     right: 0;
 }
 
-.landing-img{
+.landing-img {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -34,7 +37,8 @@
     top: 0;
     right: 0;
 }
-.header-text{
+
+.header-text {
     color: #FFF;
     font-family: "Satoshi Variable", sans-serif;
     font-size: 1.5rem;
@@ -42,12 +46,14 @@
     font-weight: 600;
     line-height: 100%;
 }
-.esmi{
-    margin-left: 1vw ;
+
+.esmi {
+    margin-left: 1vw;
     gap: 3svh;
     transition-duration: 0.1s;
 }
-.esmi-lakab{
+
+.esmi-lakab {
     color: #FFF;
     font-family: "Satoshi Variable", sans-serif;
     font-size: 18svw;
@@ -56,7 +62,8 @@
     line-height: 1;
     font-weight: 600;
 }
-.esmi-esm{
+
+.esmi-esm {
     color: #FFF;
     font-family: "Satoshi Variable", sans-serif;
     font-size: 18svw;
@@ -65,35 +72,39 @@
     margin: 0;
     line-height: 1;
 }
-.desc-star{
+
+.desc-star {
     height: 4svw;
 }
-.desc-text{
+
+.desc-text {
     color: #FFF;
     text-align: left;
     margin: 0;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 9svw;
+    font-size: 8svw;
     font-style: normal;
     font-weight: 400;
 }
 
-.role{
+.role {
+    margin-left: 1vw;
     display: flex;
     flex-direction: row;
     height: min-content;
-    gap:0.5vw;
+    gap: 2vw;
     margin-top: 0;
-    transition-duration: 0.1s;
 }
-.social-container{
+
+.social-container {
     margin-top: 1rem;
     padding: 1vw;
     width: min-content;
     height: min-content;
     transition-duration: 0.1s;
 }
-.socials{
+
+.socials {
     display: flex;
     width: min-content;
     flex-direction: row;
@@ -101,41 +112,49 @@
     padding: 10px 10px;
     justify-content: space-between;
     align-items: center;
-    gap:5svw ;
+    gap: 5svw;
     border-radius: 56px;
     border: 3px solid rgba(255, 255, 255, 0.06);
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(45px);
 }
-.social-icon{
+
+.social-icon {
     position: relative;
     pointer-events: none;
     width: 2.5rem;
 }
 
-.content{
+.social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+.content {
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 1svh;
-    top:45svh;
-    left:5vw;
+    top: 45svh;
+    left: 5vw;
 }
+
 /* icons are not well adjusted */
 @media (max-height: 700px) {
-    .content{
+    .content {
         position: absolute;
         display: flex;
         flex-direction: column;
         gap: 0svh;
-        top:40svh;
-        left:5vw;
+        top: 40svh;
+        left: 5vw;
     }
-    
+
 }
 
 @media (min-width: 520px) {
-    .landing-img{
+    .landing-img {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -144,34 +163,48 @@
         top: 0;
         right: 0;
     }
-    .desc-star{
+
+    .desc-star {
         height: 1rem;
     }
-    .socials{
+
+    .socials {
         gap: 2vw;
     }
-    .content{
+
+    .content {
         position: absolute;
-        top:45svh;
-        left:5vw;
+        top: 45svh;
+        left: 5vw;
         padding: -5vh;
     }
-    
-    .esmi-lakab{
+
+    .esmi-lakab {
         color: #FFF;
         font-family: "Satoshi Variable", sans-serif;
         font-size: 15svw;
         text-align: left;
         font-weight: 600;
     }
-    .esmi-esm{
+
+    .esmi-esm {
         color: #FFF;
         font-family: "Satoshi Variable", sans-serif;
         font-size: 11svw;
         text-align: left;
         font-weight: 600;
     }
-    .desc-text{
+
+    .role {
+        margin-left: 1vw;
+        display: flex;
+        flex-direction: row;
+        height: min-content;
+        gap: 0.5vw;
+        margin-top: 0;
+    }
+
+    .desc-text {
         color: #FFF;
         text-align: left;
         margin: 0;
@@ -181,22 +214,25 @@
         font-weight: 400;
     }
 }
+
 @media (min-width: 850px) {
-    .esmi-lakab{
+    .esmi-lakab {
         color: #FFF;
         font-family: "Satoshi Variable", sans-serif;
         font-size: 12svw;
         text-align: left;
         font-weight: 600;
     }
-    .esmi-esm{
+
+    .esmi-esm {
         color: #FFF;
         font-family: "Satoshi Variable", sans-serif;
         font-size: 10svw;
         text-align: left;
         font-weight: 600;
     }
-    .desc-text{
+
+    .desc-text {
         color: #FFF;
         text-align: left;
         margin: 0;
@@ -206,35 +242,45 @@
         font-weight: 400;
     }
 }
+
 @media (min-width: 1024px) {
 
-    .socials{
+    .socials {
         gap: 0.8vw;
     }
-    .desc-star{
+
+    .desc-star {
         height: 2rem;
     }
-    .social-icon{
+
+    .social-link {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .social-icon {
         position: relative;
         pointer-events: none;
         width: 3rem;
     }
-    
-    .esmi-lakab{
+
+    .esmi-lakab {
         color: #FFF;
         font-family: "Satoshi Variable", sans-serif;
         font-size: 7rem;
         text-align: left;
         font-weight: 600;
     }
-    .esmi-esm{
+
+    .esmi-esm {
         color: #FFF;
         font-family: "Satoshi Variable", sans-serif;
         font-size: 6rem;
         text-align: left;
         font-weight: 600;
     }
-    .desc-text{
+
+    .desc-text {
         color: #FFF;
         text-align: left;
         margin: 0;
@@ -244,8 +290,9 @@
         font-weight: 400;
     }
 }
+
 @media (min-width: 1400px) {
-    .overlay{
+    .overlay {
         height: 100%;
         width: 100%;
         position: absolute;

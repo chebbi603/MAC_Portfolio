@@ -25,7 +25,7 @@ I am currently opting for a Bachelor’s degree in Computer Science Engineering 
 I am also working as a freelancer on Upwork. I have earned a Top Rated Badge with a 100% Job success rate after working with different clients from different countries.</p>
                 </div>
             </div>
-            <div><p className="myloc">ABOUT ME</p></div>
+            <div><p className="about-myloc">ABOUT ME</p></div>
         </div>
     )
 }

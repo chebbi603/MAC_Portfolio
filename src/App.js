@@ -12,7 +12,7 @@ import ProjectsHeader from './projects/projectsheader';
 import AboutMeMobile from  './aboutme/aboutme_mobile';
 import ProjectsList from './projects/projectexample';
 import MediaQuery from 'react-responsive';
-
+import AnimatedCursor from 'react-animated-cursor';
 function App() {
 
 
@@ -53,16 +53,6 @@ function shakeitup(classname){
 
 
   useLayoutEffect(() => {
-    
-  const cursor = document.querySelector('.cursor');
-  window.addEventListener("mousemove", function (e){
-      const posX = e.pageX;
-      const posY = e.pageY;
-      cursor.animate({
-        left : `${posX}px`,
-        top: `${posY}px`,
-      },{duration:300, fill:"forwards"});
-    });
     //shakeitup('.social-container');
     let ctx = gsap.context(() => {
     gsap.to('.social-container', {
@@ -74,7 +64,7 @@ function shakeitup(classname){
       },
       y: -100, // Adjust the value for the desired effect
     });
-  gsap.to('.esmi',{
+    gsap.to('.esmi',{
     scrollTrigger: {
       trigger: '.esmi',
       start: 'top bottom',
@@ -117,7 +107,7 @@ function shakeitup(classname){
         trigger: '.expertise-textcontainer',
         pin: '.expertise-sec1',
         start: 'top 10%',
-        end: 'bottom 80%',
+        end: 'bottom 30%',
         scrub: true,
       },
       y:-100,
@@ -129,7 +119,7 @@ function shakeitup(classname){
     gsap.fromTo(circle,
         {
           opacity:0,
-          x:0,
+          x:-40,
         }, 
         {
           scrollTrigger: {
@@ -138,7 +128,7 @@ function shakeitup(classname){
             end:'top 70%',
             scrub: true,
           },
-          x:40,
+          x:0,
           delay:0.5,
           opacity:1,
         }
@@ -146,7 +136,7 @@ function shakeitup(classname){
     gsap.fromTo(circle,
       {
         opacity:1,
-        x:40,
+        x:0,
       } ,
       {
       scrollTrigger: {
@@ -182,7 +172,7 @@ function shakeitup(classname){
   {
     scrollTrigger: {
       trigger: ".contact-content",
-      start: 'top 80% bottom 10%',
+      start: 'top 80%',
       end:'bottom 90%',
       scrub:true,
     },
@@ -203,6 +193,20 @@ function shakeitup(classname){
       scrub:true,
     },
     clipPath: "polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%)",
+  });
+
+  gsap.fromTo(".projectsheader-image-mobile",
+    {
+      clipPath:"polygon(45% 40%, 55% 40%, 55% 60%, 45% 60%)"
+    } ,
+    {
+    scrollTrigger: {
+      trigger: ".projectsheader-container",
+      start: 'top 60% ',
+      end:'bottom 15% ',
+      scrub:true,
+    },
+    clipPath: "polygon(37% 0%, 63% 0%, 63% 100%, 37% 100%)",
   });
 
   // Projects Animation
@@ -323,7 +327,23 @@ gsap.fromTo(".contact-image-r",
   return (
     <div className="App" ref={el}>
       <header className="App-header">
-        <div className='cursor'></div>
+      <AnimatedCursor backgroundColor={'#000'} innerSize={8} outerSize={25} innerScale={1} outerScale={1.7} hasBlendMode={true} outerAlpha={0} zIndex={500} 
+          outerStyle={{
+            mixBlendMode: 'difference',
+            backgroundColor:'#fff'
+            
+          }}
+          innerStyle={{
+            backgroundColor:'#fff'
+          }}
+          clickables={[
+            'a',
+            'select',
+            'textarea',
+            'button',
+            '.link'
+          ]}
+        />
         <section className={"section1"}>
           <Home/>
         </section>
@@ -340,6 +360,7 @@ gsap.fromTo(".contact-image-r",
         <ProjectsList/>
         <Contact/>
       </header>
+      
     </div>
   );
 }
