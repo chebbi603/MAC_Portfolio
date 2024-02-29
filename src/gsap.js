@@ -3,7 +3,6 @@ import gsap from 'gsap';
 
 export default function MagneticButton({children}) {
     const magnetic = useRef(null);
-
     useEffect( () => {
         const xTo = gsap.quickTo(magnetic.current, "x", {duration: 1, ease: "elastic.out(1, 0.3)"})
         const yTo = gsap.quickTo(magnetic.current, "y", {duration: 1, ease: "elastic.out(1, 0.3)"})
@@ -29,8 +28,10 @@ export default function MagneticButton({children}) {
         magnetic.current.addEventListener("mouseleave", mouseLeave)
 
         return () => {
+            if(magnetic.current!=null){
             magnetic.current.removeEventListener("mousemove", mouseMove)
             magnetic.current.removeEventListener("mouseleave", mouseLeave)
+            }
         }
     }, [])
 

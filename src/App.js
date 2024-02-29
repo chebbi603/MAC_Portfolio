@@ -13,8 +13,25 @@ import AboutMeMobile from  './aboutme/aboutme_mobile';
 import ProjectsList from './projects/projectexample';
 import MediaQuery from 'react-responsive';
 import AnimatedCursor from 'react-animated-cursor';
-function App() {
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { Helmet } from 'react-helmet';
+
+function App() {
+ //FIREBASE
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQLQ60T3PO473UgPloowae2SEASfLwST8",
+    authDomain: "mac-portfolio-3a56b.firebaseapp.com",
+    projectId: "mac-portfolio-3a56b",
+    storageBucket: "mac-portfolio-3a56b.appspot.com",
+    messagingSenderId: "569080617747",
+    appId: "1:569080617747:web:78ff432fa0ba47358698e6",
+    measurementId: "G-VJYQN03EW8"
+  };
+//
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -185,6 +202,8 @@ function shakeitup(classname){
   });
 
   // Projects Animation
+  var w = document.documentElement.clientWidth || window.innerWidth;
+  if (w > 800) {
   gsap.fromTo(".projects-sub",
     {
       opacity:0,
@@ -214,7 +233,7 @@ function shakeitup(classname){
   y:-100,
 
   })
-
+  }
   //contact page
 
   //
@@ -264,15 +283,18 @@ function shakeitup(classname){
 
   return (
     <div className="App" ref={el}>
+      <Helmet>
+        <meta></meta>
+      </Helmet>
       <header className="App-header">
-      <AnimatedCursor backgroundColor={'#000'} innerSize={8} outerSize={25} innerScale={1} outerScale={1.7} hasBlendMode={true} outerAlpha={0} zIndex={500} 
+      <MediaQuery query="(min-device-width: 700px)">
+          <AnimatedCursor backgroundColor={'#000'} innerSize={8} outerSize={25} innerScale={1} outerScale={1.7} hasBlendMode={true} outerAlpha={0} zIndex={500} 
           outerStyle={{
             mixBlendMode: 'difference',
             backgroundColor:'#fff'
             
           }}
           innerStyle={{
-            
             mixBlendMode: 'difference',
             backgroundColor:'#fff'
           }}
@@ -283,15 +305,16 @@ function shakeitup(classname){
             'button',
             '.link'
           ]}
-        />
+      />
+      </MediaQuery>
         <section className={"section1"}>
           <Home/>
         </section>
         <section>
-          <MediaQuery query="(max-device-width: 1000px)">
+          <MediaQuery query="(max-width: 1000px)">
           <AboutMeMobile/>
           </MediaQuery>
-          <MediaQuery query="(min-device-width: 1000px)">
+          <MediaQuery query="(min-width: 1000px)">
           <AboutMe/>
           </MediaQuery>
         </section>

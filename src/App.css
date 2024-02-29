@@ -10,6 +10,9 @@
   font-family: 'Satoshi Variable';
   src: url('../src/assets/satoshi.ttf') format('truetype');
 }
+
+
+
 .Applogo {
   height: 40vmin;
   position: relative;

@@ -12,7 +12,7 @@ ProjectTemplate.propTypes = {
 }
 
 function ProjectTemplate({id,name,hint,desc,colors,images}) {
-    console.log(images);
+    //console.log(images);
     const colorsArray = colors.split(' ');
     const imagesArray = images.split(' ');
     useEffect(() => {
@@ -45,7 +45,7 @@ function ProjectTemplate({id,name,hint,desc,colors,images}) {
 
             <div className="project-images">
                     {imagesArray.map((i,index) =>{
-                        console.log(colorsArray[index]);
+                        //console.log(colorsArray[index]);
                         return(<div className="project-image-container" key={index}>
                         <div className="project-image-icon" style={{background: ""+colorsArray[index]}}></div>
                         <div className="project-image-img">
