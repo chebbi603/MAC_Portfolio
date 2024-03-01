@@ -9,9 +9,8 @@ function ProjectsList() {
     return(
         <div className="projects-container" >
             <div className="projects-textcontainer">
-                <p className="projects-sub">Projects I have worked on:</p>
                 <div className="projects-list">
-                    ${projects.map((p) =>{
+                    {projects.map((p) =>{
                         return(<ProjectTemplate key={p.id} id={p.id} name={p.projectName} hint={p.projectInfo} desc={p.projectDesc} colors={p.projectColors} images={p.projectImages}/>)
                     })}
                 </div>

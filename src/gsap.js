@@ -13,8 +13,8 @@ export default function MagneticButton({children}) {
             const x = clientX - (left + width/2)
             const y = clientY - (top + height/2)
             
-            xTo(x/4);
-            yTo(y/2)
+            xTo(x/8);
+            yTo(y/4)
         }
 
         const mouseLeave = (e) => {

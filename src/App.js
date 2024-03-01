@@ -49,23 +49,7 @@ function App() {
   const q = gsap.utils.selector(el);
 
 
-function shakeitup(classname){
-  document.querySelectorAll(classname).forEach(btn=>{
-    btn.addEventListener('mousemove',(e)=>{
-      let x = e.offsetX
-      let y = e.offsetY-window.scrollY
-      let btnWidth = btn.clientWidth;
-      let btnHeigth = btn.clientHeight;
-      let transX = (x-btnWidth/2)/4;
-      let transY = (y-btnHeigth/2)/4;
-      btn.style.transform = `translateX(${transX*.15}px) translateY(${transY*.15 - 50}px) scale(1.05)`
 
-    })
-    btn.addEventListener('mouseout', (e)=>{
-      btn.style.transform=``;
-    })
-  });
-}
 
 
 
@@ -202,57 +186,98 @@ function shakeitup(classname){
   });
 
   // Projects Animation
-  var w = document.documentElement.clientWidth || window.innerWidth;
-  if (w > 800) {
-  gsap.fromTo(".projects-sub",
+  
+  var sections = gsap.utils.toArray(".project-main");
+  var containers = gsap.utils.toArray(".project-container");
+  sections.forEach((container,index) => {
+    gsap.fromTo(container,
+      {
+        opacity:0,
+        y:100,
+      }, 
+      {
+        scrollTrigger: {
+          trigger: container,
+          start: 'bottom 100%',
+          end:'top 60%',
+          scrub: true,
+        },
+        y:0,
+        opacity:1,
+      }
+  );
+  gsap.fromTo(container,
     {
-      opacity:0,
-      x:50,
+      y:0,
     }, 
     {
       scrollTrigger: {
-        trigger: ".projects-sub",
-        start: 'top 100% bottom',
-        end:'top 10%',
+        trigger: containers[index],
+        start: 'top 10%',
+        pin:container,
+        end:'60% top 40%',
         scrub: true,
       },
-      x:0,
-      y:0,
-      delay:2,
-      opacity:1,
+      y:-50,
     }
 );
-  gsap.to(".projects-sub",{
-    scrollTrigger: {
-    trigger: '.projects-textcontainer',
-    pin: '.projects-sub',
-    start: 'top 5%',
-    end: 'bottom 20%',
-    scrub: true,
-  },
-  y:-100,
 
-  })
-  }
+    });
+
+  
   //contact page
 
-  //
-
-  q(".project-container").forEach((circle) => {
+  q(".project-image-container").forEach((circle) => {
      
     gsap.fromTo(circle,
         {
           opacity:0,
-          x:50,
+          y:50,
         }, 
         {
           scrollTrigger: {
             trigger: circle,
             start: 'top 100% bottom',
-            end:'top 30%',
-            scrub: true,
+            scrub:true,
+            end:'top 70%',
           },
-          x:0,
+          y:-50,
+          delay:2,
+          opacity:1,
+        }
+    );
+    gsap.fromTo(circle,
+      {
+        y:-50,
+        opacity:1,
+      } ,
+      {
+      scrollTrigger: {
+        trigger: circle,
+        start: 'bottom 90%',
+        end:'bottom 60%',
+        scrub:true,
+      },
+      y:-100,
+      opacity:0,
+    });
+  });
+
+  q(".project-description").forEach((circle) => {
+     
+    gsap.fromTo(circle,
+        {
+          opacity:0,
+          y:100,
+        }, 
+        {
+          scrollTrigger: {
+            trigger: circle,
+            start: 'top 100% bottom',
+            scrub:true,
+            end:'top 70%',
+          },
+          y:0,
           delay:2,
           opacity:1,
         }
@@ -260,19 +285,20 @@ function shakeitup(classname){
     gsap.fromTo(circle,
       {
         opacity:1,
-        x:0,
+        y:0,
       } ,
       {
       scrollTrigger: {
         trigger: circle,
-        start: 'bottom 70%',
-        end:'bottom 30%',
+        start: 'bottom 40%',
+        end:'bottom 20%',
         scrub:true,
       },
-      x:-50,
+      y:-10,
       opacity:0,
     });
   });
+
 
 
   })
@@ -295,7 +321,7 @@ function shakeitup(classname){
             
           }}
           innerStyle={{
-            mixBlendMode: 'difference',
+            mixBlendMode: "difference",
             backgroundColor:'#fff'
           }}
           clickables={[
