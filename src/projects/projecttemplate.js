@@ -7,13 +7,11 @@ ProjectTemplate.propTypes = {
     name: PropTypes.string,
     hint: PropTypes.string,
     desc: PropTypes.string,
-    colors: PropTypes.string,
     images: PropTypes.string
 }
 
-function ProjectTemplate({id,name,hint,desc,colors,images}) {
+function ProjectTemplate({id,name,hint,desc,images}) {
     //console.log(images);
-    const colorsArray = colors.split(' ');
     const imagesArray = images.split(' ');
 
     return (

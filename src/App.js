@@ -215,12 +215,28 @@ function App() {
         trigger: containers[index],
         start: 'top 10%',
         pin:container,
-        end:'60% top 40%',
+        end:'80% top 40%',
         scrub: true,
       },
       y:-50,
     }
+    
 );
+gsap.fromTo(container,
+  {
+    x:0,
+    opacity:1,
+  }, 
+  {
+    scrollTrigger: {
+      trigger: containers[index],
+      start: 'bottom 60%',
+      end:'80% top 90%',
+      scrub: true,
+    },
+    x:-10,
+    opacity:0,
+  });
 
     });
 
@@ -239,7 +255,7 @@ function App() {
             trigger: circle,
             start: 'top 100% bottom',
             scrub:true,
-            end:'top 70%',
+            end:'top 60%',
           },
           y:-50,
           delay:2,
@@ -254,11 +270,11 @@ function App() {
       {
       scrollTrigger: {
         trigger: circle,
-        start: 'bottom 90%',
-        end:'bottom 60%',
+        start: '50% 40%',
+        end:'50% 20%',
         scrub:true,
       },
-      y:-100,
+      y:-50,
       opacity:0,
     });
   });
@@ -290,8 +306,8 @@ function App() {
       {
       scrollTrigger: {
         trigger: circle,
-        start: 'bottom 40%',
-        end:'bottom 20%',
+        start: 'bottom 50%',
+        end:'bottom 30%',
         scrub:true,
       },
       y:-10,

@@ -26,7 +26,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 25px;
+    gap: 3rem;
 }
 .project-main{
     display: flex;
@@ -39,7 +39,7 @@
     color: black;
     z-index: 9;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 64px;
+    font-size: 3rem;
     text-align: left;
     font-style: normal;
     font-weight: 600;
@@ -62,19 +62,19 @@
 .project-info{
     color: #111516;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
     text-align: left;
     font-style: normal;
     font-weight: 400;
     padding: 0;
     margin: 0;
-    line-height: 100%;
+    line-height: 130%;
 }
 .project-description{
     font-family: "Satoshi Variable", sans-serif;
     color: #111516;
     font-family: "Satoshi Variable";
-    font-size: 32px;
+    font-size: 1.2rem;
     text-align: left;
     font-style: normal;
     font-weight: 400;
@@ -107,7 +107,7 @@
     grid-auto-rows: max-content;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 450px) {
     .project-images{
         display: grid;
         width: 100%;
@@ -137,4 +137,44 @@
         min-height: 100%;
         object-fit: cover;  
     }
+}
+
+@media (min-width: 1000px) {
+.project-description{
+    font-family: "Satoshi Variable", sans-serif;
+    color: #111516;
+    font-family: "Satoshi Variable";
+    font-size: 2rem;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 130%
+}
+
+.project-info{
+    color: #111516;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 1.5rem;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+}
+
+.project-title{
+    color: black;
+    z-index: 9;
+    font-family: "Satoshi Variable", sans-serif;
+    font-size: 4rem;
+    text-align: left;
+    font-style: normal;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+}
 }

@@ -11,7 +11,7 @@ function ProjectsList() {
             <div className="projects-textcontainer">
                 <div className="projects-list">
                     {projects.map((p) =>{
-                        return(<ProjectTemplate key={p.id} id={p.id} name={p.projectName} hint={p.projectInfo} desc={p.projectDesc} colors={p.projectColors} images={p.projectImages}/>)
+                        return(<ProjectTemplate key={p.id} id={p.id} name={p.projectName} hint={p.projectInfo} desc={p.projectDesc} images={p.projectImages}/>)
                     })}
                 </div>
             </div>
