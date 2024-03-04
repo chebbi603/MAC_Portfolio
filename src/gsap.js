@@ -4,23 +4,22 @@ import gsap from 'gsap';
 export default function MagneticButton({children}) {
     const magnetic = useRef(null);
     useEffect( () => {
-        const xTo = gsap.quickTo(magnetic.current, "x", {duration: 1, ease: "elastic.out(1, 0.3)"})
-        const yTo = gsap.quickTo(magnetic.current, "y", {duration: 1, ease: "elastic.out(1, 0.3)"})
+        const xTo = gsap.quickTo(magnetic.current, "x", { duration: 1, ease: "elastic.out(1,1)"})
+        const yTo = gsap.quickTo(magnetic.current, "y", { duration: 1, ease: "elastic.out(1,1)"})
 
         const mouseMove = (e) => {
             const { clientX, clientY } = e;
             const {height, width, left, top} = magnetic.current.getBoundingClientRect();
             const x = clientX - (left + width/2)
             const y = clientY - (top + height/2)
-            
             xTo(x/8);
-            yTo(y/4)
+            yTo(y/4);
+            gsap.to(magnetic.current,{scale:1.1,boxShadow:"0px 0px 200px rgba(255, 255, 255, 0.4)"})
         }
 
         const mouseLeave = (e) => {
-            gsap.to(magnetic.current, {x: 0, duration: 1})
-            gsap.to(magnetic.current, {y: 0, duration: 1})
-            xTo(0);
+            gsap.to(magnetic.current,{scale:1,boxShadow:"0px 0px 200px rgba(255, 255, 255, 0)"})
+            xTo(0)
             yTo(0)
         }
 

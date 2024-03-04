@@ -22,6 +22,7 @@ function ProjectTemplate({id,name,hint,desc,images}) {
             <p className="project-info">{hint}</p>
             </div>
             <p className="project-description">{desc}</p>
+            <div className="dummy-grid">
             <div className="project-images" style={{gridTemplateColumns: `${imagesArray.length} fr`}}>
                     {imagesArray.map((i,index) =>{
                         return(
@@ -32,6 +33,7 @@ function ProjectTemplate({id,name,hint,desc,images}) {
                         </div>
                     </div>)
                     })}
+            </div>
             </div>
         </div>
     )

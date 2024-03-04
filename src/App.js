@@ -17,6 +17,7 @@ import AnimatedCursor from 'react-animated-cursor';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { Helmet } from 'react-helmet';
+import Preloader from './preloader/preloader';
 
 function App() {
  //FIREBASE
@@ -50,14 +51,9 @@ function App() {
 
 
 
-
-
-
   useLayoutEffect(() => {
-    //shakeitup('.social-container');
     let ctx = gsap.context(() => {
     
- 
     gsap.to('.landing-container', {
       scrollTrigger: {
         trigger: '.landing-img',
@@ -65,20 +61,62 @@ function App() {
         end: 'bottom',
         scrub: true,
       },
-      y: -150, // Adjust the value for the desired effect
+      y: -150,
     });
+    
+    gsap.fromTo('.preloader-content', {
+      opacity:1,
+      y:0,
+    }, {
+      opacity:0,
+      y:10,
+      delay:2,
+      ease: "elastic.out(1,3)",
+      duration:0.25,
+    });
+    gsap.fromTo('.preloader-content', {
+      opacity:0,
+      y:-20,
+    }, {
+      opacity:1,
+      y:0,
+      delay:0.5,
+      ease: "elastic.out(1,3)",
+      duration:1,
+    });
+    gsap.fromTo('.preloader-img', {
+      opacity:0,
+    }, {
+      opacity:1,
+      delay:0,
+      duration:2,
+    });
+    gsap.fromTo('.preloader-container', {
+      opacity:1,
+      scale:1
+    }, {
+      opacity:0,
+      scale:1,
+      ease: "elastic.out(1,3)",
+      delay:2,
+      zIndex:-1,
+      duration:0.5,
+    });
+
     gsap.to('.aboutme-sec1', {
       scrollTrigger: {
         trigger: '.aboutme-textcontainer',
         pin: '.aboutme-sec1',
         start: 'top 20%',
-        end: 'bottom 80%',
+        endTrigger: '.aboutme-container',
+        end: 'bottom 95%',
         scrub: true,
       },
       y:-100,
     });
    
-    gsap.to('.expertise-sec1', {
+    gsap.fromTo('.expertise-sec1', {y:0},
+    {
       scrollTrigger: {
         trigger: '.expertise-textcontainer',
         pin: '.expertise-sec1',
@@ -198,7 +236,7 @@ function App() {
       {
         scrollTrigger: {
           trigger: container,
-          start: 'bottom 100%',
+          start: 'top 100%',
           end:'top 60%',
           scrub: true,
         },
@@ -224,7 +262,6 @@ function App() {
 );
 gsap.fromTo(container,
   {
-    x:0,
     opacity:1,
   }, 
   {
@@ -234,7 +271,6 @@ gsap.fromTo(container,
       end:'80% top 90%',
       scrub: true,
     },
-    x:-10,
     opacity:0,
   });
 
@@ -306,8 +342,8 @@ gsap.fromTo(container,
       {
       scrollTrigger: {
         trigger: circle,
-        start: 'bottom 50%',
-        end:'bottom 30%',
+        start: 'top 20%',
+        end:'top 10%',
         scrub:true,
       },
       y:-10,
@@ -322,7 +358,6 @@ gsap.fromTo(container,
   return () => ctx.revert();
 }, []);
 
-
   return (
     <div className="App" ref={el}>
       <Helmet>
@@ -332,7 +367,7 @@ gsap.fromTo(container,
       <MediaQuery query="(min-device-width: 700px)">
           <AnimatedCursor backgroundColor={'#000'} innerSize={8} outerSize={25} innerScale={1} outerScale={1.7} hasBlendMode={true} outerAlpha={0} zIndex={500} 
           outerStyle={{
-            mixBlendMode: 'difference',
+            mixBlendMode: 'exclusion',
             backgroundColor:'#fff'
             
           }}
@@ -350,6 +385,7 @@ gsap.fromTo(container,
       />
       </MediaQuery>
         <section className={"section1"}>
+          <Preloader/>
           <Home/>
         </section>
         <section>

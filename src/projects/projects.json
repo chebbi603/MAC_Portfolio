@@ -4,7 +4,7 @@
         "id": 1,
         "projectName": "Avatario",
         "projectInfo": "Branding - UX/UI Design",
-        "projectDesc": "Dr Klini is an Android application that we created during the CraftHack hackathon organized by CraftHub Hungary. It was a great opportunity to invent a smart solution that can help improve the Hungarian health system. Using machine learning model and a wide database provided by the Hungarian Government, we were able to organize and schedule medical appointments while taking into consideration how critical his medical case is.",
+        "projectDesc": "Avatario is a mobile app that uses AI to help monitor youngster's mental heath by providing them with a set of games and challenges.",
         "projectImages" : "./avatario/1.png ./avatario/2.png"   
     },
     {
@@ -12,7 +12,7 @@
         "projectName": "Dr.Klini",
         "projectInfo": "Branding - UX/UI Design - Android Application Development",
         "projectDesc": "Dr Klini is an Android application that we created during the CraftHack hackathon organized by CraftHub Hungary. It was a great opportunity to invent a smart solution that can help improve the Hungarian health system. Using machine learning model and a wide database provided by the Hungarian Government, we were able to organize and schedule medical appointments while taking into consideration how critical his medical case is.",
-        "projectImages" : "./drklini/1.png"   
+        "projectImages" : "./drklini/1.png ./drklini/2.png"   
     },
     {
         "id": 3,

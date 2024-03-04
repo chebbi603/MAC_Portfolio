@@ -9,6 +9,8 @@
 @font-face {
   font-family: 'Satoshi Variable';
   src: url('../src/assets/satoshi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 

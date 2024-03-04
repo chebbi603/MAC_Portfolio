@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: row;
     margin-left: 6vw;
-    gap: 0.5vw;
+    gap: 0vw;
     position: absolute;
     top: 5%;
 }
 
 .header-logo {
-    scale: 0.9;
+    scale: 0.7;
 }
 
 .landing-container {
@@ -41,9 +41,8 @@
 .header-text {
     color: #FFF;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight:100;
     line-height: 100%;
 }
 
@@ -102,7 +101,6 @@
     padding: 1vw;
     width: min-content;
     height: min-content;
-    transition-duration: 0.1s;
 }
 
 .socials {
@@ -122,8 +120,8 @@
 
 .social-icon {
     position: relative;
-    pointer-events: none;
     width: 2.5rem;
+    pointer-events: none;
 }
 
 .social-link {
@@ -137,32 +135,8 @@
     display: flex;
     flex-direction: column;
     gap: 3svh;
-    top: 45svh;
+    top: max(6rem,28svh);
     left: 5vw;
-}
-
-/* icons are not well adjusted */
-@media (max-height: 800px) {
-    .content {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        gap: 3svh;
-        top: 35svh;
-        left: 5vw;
-    }
-
-}
-
-@media (min-width: 400px) {
-    .content {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        top: 35svh;
-        left: 5vw;
-    }
-
 }
 
 @media (min-width: 520px) {
@@ -262,7 +236,7 @@
     }
 
     .desc-star {
-        height: 2rem;
+        height: 1.5rem;
     }
 
     .social-link {
@@ -298,8 +272,16 @@
         margin: 0;
         font-family: "Satoshi Variable", sans-serif;
         font-size: 3rem;
+        width: 65%;
         font-style: normal;
         font-weight: 400;
+    }
+    
+    .content {
+        position: absolute;
+        top: 35svh;
+        left: 5vw;
+        padding: -5vh;
     }
 }
 
@@ -311,5 +293,76 @@
         background-color: rgba(0, 0, 0, 0);
         top: 0;
         right: 0;
+    }
+}
+
+@media (min-height: 600px) {
+    .content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: max(0.5rem,3svh);
+        top: max(8rem,37svh);
+        left: 5vw;
+    }
+}
+
+@media (max-height: 600px) {
+    .content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: max(0.5rem,3svh);
+        top: max(6rem,30svh);
+        left: 5vw;
+    }
+    .desc-star {
+        height: 1rem;
+    }
+
+    .socials {
+        gap: 2vw;
+    }
+
+    .esmi-lakab {
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: max(2.5rem,8svh);
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .esmi-esm {
+        color: #FFF;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: max(2.5rem,8svh);
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .role {
+        margin-left: 1vw;
+        display: flex;
+        flex-direction: row;
+        height: min-content;
+        gap: 0.5vw;
+        margin-top: 0;
+    }
+
+    .landing-container {
+        position: relative;
+        width: 100vw;
+        height: max(30rem,140svh);
+        overflow: hidden;
+    }
+
+    .desc-text {
+        color: #FFF;
+        text-align: left;
+        margin: 0;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: max(1rem,5svh);
+        font-style: normal;
+        font-weight: 400;
     }
 }

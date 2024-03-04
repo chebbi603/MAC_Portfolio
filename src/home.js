@@ -1,7 +1,7 @@
 // noinspection JSVoidFunctionReturnValueUsed
 
 import "./home.css"
-import landingimg from "../src/assets/photo.png";
+import landingimg from "../src/assets/photo.webp";
 import logosmall from "../src/assets/logo_small.svg";
 import descstar from "../src/assets/star.svg";
 import fb from "../src/assets/fb.svg";
@@ -36,8 +36,9 @@ function Home(){
                 <p className={"desc-text"}>Freelance UX/UI Designer & Developer</p>
             </div>
             <MediaQuery query="(min-device-width: 700px)">
-                    <MagneticButton>
+                    
                         <div className={"social-container"} >
+                        <MagneticButton>
                             <div className={"socials"}>
                                 <a className={"social-link"} target="_blank" href="https://www.facebook.com/chebbimedayoub">
                                     <img className={"social-icon"} src={fb} />
@@ -52,8 +53,8 @@ function Home(){
                                 <a className={"social-link"} target="_blank" href="https://www.instagram.com/chebbimedayoub/">
                                     <img className={"social-icon"} src={insta} /></a>
                             </div>
+                        </MagneticButton>
                         </div>
-                    </MagneticButton>
                     </MediaQuery>
 
                     <MediaQuery query="(max-device-width: 700px)">

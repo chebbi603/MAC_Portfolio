@@ -10,11 +10,11 @@
 .aboutme-textcontainer{
     display: flex;
     align-items: flex-start;
-    gap: 10%;
+    gap: 7%;
 }
 .aboutme-sec1{
     display: flex;
-    width: 30%;
+    width: 32%;
     align-items: start;
     flex-direction: column;
 }
@@ -26,7 +26,7 @@
 }
 .aboutme-sec2{
     display: flex;
-    width: 45%;
+    width: 43%;
     align-items: start;
     flex-direction: column;
 }
@@ -40,7 +40,7 @@
 .aboutme-title{
     color: black;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 64px;
+    font-size: 4rem;
     text-align: left;
     font-style: normal;
     font-weight: 600;
@@ -49,7 +49,7 @@
     margin: 0;
     line-height: 100%;
 }
-.myloc{
+.about-myloc{
     color: rgb(139, 139, 139);
     font-family: "Satoshi Variable", sans-serif;
     font-size: 18px;
@@ -75,7 +75,7 @@
     color: black;
     text-align: left;
     font-family: "Satoshi Variable", sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 300;
     padding-top: 15vh;
@@ -93,7 +93,7 @@
         color: black;
         text-align: left;
         font-family: "Satoshi Variable", sans-serif;
-        font-size: 2svw;
+        font-size: 2rem;
         font-style: normal;
         font-weight: 300;
         padding-top: 15vh;
@@ -103,18 +103,18 @@
     .aboutme-textcontainer{
         display: flex;
         align-items: flex-start;
-        gap: 5%;
+        gap: 4%;
     }
     .aboutme-sec1{
         display: flex;
-        width: 35%;
+        width: 37%;
         align-items: start;
         flex-direction: column;
     }
     .aboutme-title{
         color: black;
         font-family: "Satoshi Variable", sans-serif;
-        font-size: 6svw;
+        font-size: 4rem;
         text-align: left;
         font-style: normal;
         font-weight: 600;
@@ -127,7 +127,7 @@
         color: black;
         text-align: left;
         font-family: "Satoshi Variable", sans-serif;
-        font-size: 3svw;
+        font-size: 2.5rem;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -152,7 +152,7 @@
         color: black;
         text-align: left;
         font-family: "Satoshi Variable", sans-serif;
-        font-size: 10svw;
+        font-size: 4rem;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -161,7 +161,7 @@
     .aboutme-title{
         color: black;
         font-family: "Satoshi Variable", sans-serif;
-        font-size: 14svw;
+        font-size: 6rem;
         text-align: left;
         font-style: normal;
         font-weight: 600;
@@ -174,11 +174,37 @@
         color: black;
         text-align: left;
         font-family: "Satoshi Variable", sans-serif;
-        font-size: 6svw;
+        font-size: 2rem;
         font-style: normal;
         font-weight: 300;
         padding-top: 15vh;
         line-height: 150%;
         margin: 0;
+    }
+}
+
+@media  (max-width: 800px) {
+    
+    .aboutme-sub{
+        color: black;
+        text-align: left;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -1px;
+    }
+    .aboutme-title{
+        color: black;
+        font-family: "Satoshi Variable", sans-serif;
+        font-size: 3.5rem;
+        text-align: left;
+        font-style: normal;
+        font-weight: 600;
+        padding: 0;
+        padding-top: 10vh;
+        margin: 0;
+        line-height: 100%;
     }
 }

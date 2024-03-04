@@ -1,5 +1,5 @@
 import "./projectsheader.css"
-import projectsheaderimg from "../assets/projectsheader.png"
+import projectsheaderimg from "../assets/projectsheader.webp"
 import MediaQuery from "react-responsive";
 
 function ProjectsHeader() {

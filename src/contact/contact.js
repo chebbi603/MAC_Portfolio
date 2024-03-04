@@ -1,6 +1,4 @@
 import "./contact.css"
-import upworkimg from "../assets/upworkprofile.png"
-import dribbbleimg from "../assets/dribbbleprofile.png"
 import logosmall from "../assets/logo_small.svg"
 import fb from "../assets/fb.svg";
 import lin from "../assets/linkedin.svg";
@@ -19,11 +17,12 @@ function Contact() {
             <div className="contact-content">
                 <div className="contact-text">
                     <p className="contact-title">CONTACT</p>
-                    <p className="projectsheader-p">You can find me on:</p>
+                    <p className="projectsheader-p">You can find me on</p>
                     
                     <MediaQuery query="(min-device-width: 700px)">
-                    <MagneticButton>
                         <div className={"social-container"} >
+                            
+                            <MagneticButton>
                             <div className={"socials"}>
                                 <a className={"social-link"} target="_blank" href="https://www.facebook.com/chebbimedayoub">
                                     <img className={"social-icon"} src={fb} />
@@ -38,8 +37,9 @@ function Contact() {
                                 <a className={"social-link"} target="_blank" href="https://www.instagram.com/chebbimedayoub/">
                                     <img className={"social-icon"} src={insta} /></a>
                             </div>
+                            
+                        </MagneticButton>
                         </div>
-                    </MagneticButton>
                     </MediaQuery>
 
                     <MediaQuery query="(max-device-width: 700px)">
