@@ -18,7 +18,7 @@ function Contact() {
             <div className="contact-content">
                 <div className="contact-text">
                     <p className="contact-title">CONTACT</p>
-                    <p className="projectsheader-p">Thank you for visiting!<br/>Feel free to connect with me through the links below.</p>
+                    <p className="projectsheader-p">Thank you for visiting!<br/><br/>Feel free to check the links below.</p>
                     
                     <MediaQuery query="(min-device-width: 700px)">
                         <div className={"social-container"} >

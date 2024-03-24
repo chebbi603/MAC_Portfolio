@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {PropTypes} from "prop-types"
 import "./projectexample.css"
 
@@ -22,18 +21,16 @@ function ProjectTemplate({id,name,hint,desc,images}) {
             <p className="project-info">{hint}</p>
             </div>
             <p className="project-description">{desc}</p>
-            <div className="dummy-grid">
-            <div className="project-images" style={{gridTemplateColumns: `${imagesArray.length} fr`}}>
+            <div className="project-images" style={{gridTemplateColumns: `${imagesArray.length} fr`, gridAutoRows:"max-content"} }>
                     {imagesArray.map((i,index) =>{
                         return(
                         <div className="project-image-container" key={index}>
                         <div className="project-image-img">
-                            <img alt="img" src={require(""+i)}>
+                            <img className="pig" alt="img" src={require(""+i)}>
                             </img>
                         </div>
                     </div>)
                     })}
-            </div>
             </div>
         </div>
     )

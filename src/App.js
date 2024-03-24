@@ -74,8 +74,8 @@ function App() {
   const analytics = getAnalytics(app);
 
   const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, (1.001 - Math.pow(2,-10*t)))
+    duration: 0.6,
+    easing: (t) => Math.min(1, (1.01 - Math.pow(2,-10*t)))
   })
 
   function raf(time) {
@@ -85,7 +85,7 @@ function App() {
   requestAnimationFrame(raf)
   const el = useRef();
   const q = gsap.utils.selector(el);
-
+  
   
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -132,7 +132,7 @@ function App() {
         end: 'bottom',
         scrub: true,
       },
-      y: -150,
+      y: -100,
     });
 
   
@@ -392,7 +392,7 @@ gsap.fromTo(container,
     <div className="App" ref={el}>
       <Helmet>
         <meta name="description" content="Welcome to Mohamed Ayoub Chebbi's portfolio, a 21 year old UX/UI Designer and Developer studying in Hungary" />
-        <meta name="keywords" content="UX design, UI design, user interface, web design, graphic design, software development, photography, programming, HTML, CSS, JavaScript, React, Figma, Upwork, Design Freelancer, Java, Android" />
+        <meta name="keywords" content="freelancer, tunisia, tunisian designer, mohamed ayoub chebbi, ayoub chebbi, UX design, UI design, user interface, web design, graphic design, software development, photography, programming, HTML, CSS, JavaScript, React, Figma, Upwork, Design Freelancer, Java, Android" />
         <meta property="og:url" content="https://chebbimedayoub.tech" />
       </Helmet>
       <header className="App-header">

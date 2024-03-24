@@ -34,6 +34,10 @@ function Home(){
             <div className={"home-content-data"}>
             <div className={"header"}>
                 <img src={logosmall} className="header-logo" alt={"byMe"}/>
+                <div className="mentions">
+                    <p className="mentions_txt">Shot in Budapest, Hungary</p>
+                    <p className="mentions_txt">By: <a className="mentions_link" target="_blank" href="https://www.instagram.com/malekbenyoussef/">@MalekBenYoussef</a></p>
+                </div>
             </div>
             <div className={"content"}>
             <div className={"esmi"}  >
