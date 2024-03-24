@@ -7,6 +7,7 @@
     background: #FFF;
     flex-direction: column;
     gap: 60px;
+    z-index: 0;
 }
 .projects-textcontainer{
     display: flex;

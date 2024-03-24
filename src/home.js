@@ -9,6 +9,8 @@ import lin from "../src/assets/linkedin.svg";
 import dri from "../src/assets/dribbble.svg";
 import upw from "../src/assets/upwork.svg";
 import insta from "../src/assets/insta.svg";
+import vsco from "../src/assets/vsco.svg";
+import github from "../src/assets/github.svg";
 import MagneticButton from "./gsap";
 import MediaQuery from "react-responsive";
 
@@ -17,14 +19,21 @@ function Home(){
     return(
         <div className="home">
             <div className={"home-content"}></div>
+            <MediaQuery query="(min-height: 850px)">
             <div className="landing-container">
                 <img src={landingimg} className="landing-img" alt={"byMalek"}/>
                 <div className="overlay"></div>
             </div>
+            </MediaQuery>
+            <MediaQuery query="(max-height: 850px)">
+            <div className="landing-container-2">
+                <img src={landingimg} className="landing-img" alt={"byMalek"}/>
+                <div className="overlay"></div>
+            </div>
+            </MediaQuery>
             <div className={"home-content-data"}>
             <div className={"header"}>
                 <img src={logosmall} className="header-logo" alt={"byMe"}/>
-                <p className={"header-text"}>Portfolio</p>
             </div>
             <div className={"content"}>
             <div className={"esmi"}  >
@@ -51,7 +60,14 @@ function Home(){
                                 <a className={"social-link"} target="_blank" href="https://www.upwork.com/freelancers/ayoubc4">
                                     <img className={"social-icon"} src={upw} /></a>
                                 <a className={"social-link"} target="_blank" href="https://www.instagram.com/chebbimedayoub/">
-                                    <img className={"social-icon"} src={insta} /></a>
+                                    <img className={"social-icon"} src={insta} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://github.com/chebbi603">
+                                    <img className={"social-icon"} src={github} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://vsco.co/chebbimedayoub/gallery">
+                                    <img className={"social-icon"} src={vsco} />
+                                </a>
                             </div>
                         </MagneticButton>
                         </div>
@@ -71,7 +87,14 @@ function Home(){
                                 <a className={"social-link"} target="_blank" href="https://www.upwork.com/freelancers/ayoubc4">
                                     <img className={"social-icon"} src={upw} /></a>
                                 <a className={"social-link"} target="_blank" href="https://www.instagram.com/chebbimedayoub/">
-                                    <img className={"social-icon"} src={insta} /></a>
+                                    <img className={"social-icon"} src={insta} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://github.com/chebbi603">
+                                    <img className={"social-icon"} src={github} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://vsco.co/chebbimedayoub/gallery">
+                                    <img className={"social-icon"} src={vsco} />
+                                </a>
                             </div>
                         </div>
                     </MediaQuery>

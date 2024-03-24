@@ -22,7 +22,7 @@
     z-index: 1;
     padding-top: 15px;
     padding-bottom: 30px ;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -91,17 +91,17 @@
         display: flex;
         flex-direction: column;
         gap: 70px;
-        margin-top: 6svh;
+        margin-top: 2svh;
     }
     .expertise-title{
         color: black;
         font-family: "Satoshi Variable", sans-serif;
-        font-size: 10svw;
+        font-size: 14svw;
         text-align: left;
         font-style: normal;
         font-weight: 600;
         padding: 0;
-        padding-top: 10vh;
+        padding-top: 4vh;
         margin: 0;
         line-height: 100%;
     }
@@ -146,4 +146,30 @@
         margin: 0;
         line-height: 100%;
     }
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+      }
+  }
+.ff{
+    gap: 0px;
+    margin-left: 0vw;
+}
+.fancy{
+    background-image: linear-gradient(40deg,#085078,#85d8ce,#085078);
+    background-size: 200% 100%;
+    font-weight: 600;
+    line-height: normal;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 10s linear infinite;
 }

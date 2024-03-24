@@ -19,6 +19,44 @@ import { getAnalytics } from "firebase/analytics";
 import { Helmet } from 'react-helmet';
 import Preloader from './preloader/preloader';
 
+
+function waitForWebsiteLoad() {
+  return Promise.all([
+    waitForImagesLoad(),
+    waitForFontsLoad()
+  ]);
+}
+
+function waitForImagesLoad() {
+  return new Promise(resolve => {
+    const images = document.querySelectorAll('img');
+    const totalImages = images.length;
+    let imagesLoaded = 0;
+
+    function checkImagesLoaded() {
+      imagesLoaded++;
+      if (imagesLoaded === totalImages) {
+        resolve();
+      }
+    }
+
+    images.forEach(image => {
+      if (image.complete) {
+        checkImagesLoaded();
+      } else {
+        image.addEventListener('load', checkImagesLoaded);
+        image.addEventListener('error', checkImagesLoaded);
+      }
+    });
+  });
+}
+
+function waitForFontsLoad() {
+  return new Promise(resolve => {
+    document.fonts.ready.then(resolve);
+  });
+}
+
 function App() {
  //FIREBASE
   const firebaseConfig = {
@@ -31,10 +69,9 @@ function App() {
     measurementId: "G-VJYQN03EW8"
   };
 //
+
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-
-  gsap.registerPlugin(ScrollTrigger);
 
   const lenis = new Lenis({
     duration: 1.2,
@@ -49,31 +86,9 @@ function App() {
   const el = useRef();
   const q = gsap.utils.selector(el);
 
-
-
+  
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-    
-    gsap.to('.landing-container', {
-      scrollTrigger: {
-        trigger: '.landing-img',
-        start: 'top',
-        end: 'bottom',
-        scrub: true,
-      },
-      y: -150,
-    });
-    
-    gsap.fromTo('.preloader-content', {
-      opacity:1,
-      y:0,
-    }, {
-      opacity:0,
-      y:10,
-      delay:2,
-      ease: "elastic.out(1,3)",
-      duration:0.25,
-    });
     gsap.fromTo('.preloader-content', {
       opacity:0,
       y:-20,
@@ -91,45 +106,37 @@ function App() {
       delay:0,
       duration:2,
     });
-    gsap.fromTo('.preloader-container', {
-      opacity:1,
-      scale:1
-    }, {
-      opacity:0,
-      scale:1,
-      ease: "elastic.out(1,3)",
-      delay:2,
-      zIndex:-1,
-      duration:0.5,
-    });
+    waitForWebsiteLoad().then(() => { 
+      gsap.to('.preloader-content', {
+        opacity:0,
+        y:10,
+        delay:2,
+        ease: "elastic.out(1,3)",
+        duration:0.25,
+      });
+      gsap.to('.preloader-container',  {
+        opacity:0,
+        scale:1,
+        ease: "elastic.out(1,3)",
+        delay:2,
+        zIndex:-1,
+        duration:0.5,
+      });
 
-    gsap.to('.aboutme-sec1', {
+    gsap.registerPlugin(ScrollTrigger);
+      
+    gsap.to('.landing-container', {
       scrollTrigger: {
-        trigger: '.aboutme-textcontainer',
-        pin: '.aboutme-sec1',
-        start: 'top 20%',
-        endTrigger: '.aboutme-container',
-        end: 'bottom 95%',
+        trigger: '.landing-img',
+        start: 'top',
+        end: 'bottom',
         scrub: true,
       },
-      y:-100,
-    });
-   
-    gsap.fromTo('.expertise-sec1', {y:0},
-    {
-      scrollTrigger: {
-        trigger: '.expertise-textcontainer',
-        pin: '.expertise-sec1',
-        start: 'top 5%',
-        end: 'bottom 20%',
-        scrub: true,
-      },
-      y:-100,
+      y: -150,
     });
 
   
     q(".expertiseelement").forEach((circle) => {
-     
     gsap.fromTo(circle,
         {
           opacity:0,
@@ -350,9 +357,32 @@ gsap.fromTo(container,
       opacity:0,
     });
   });
-
-
-
+    });
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.aboutme-sec1', {
+      scrollTrigger: {
+        trigger: '.aboutme-textcontainer',
+        pin: '.aboutme-sec1',
+        start: 'top 20%',
+        endTrigger: '.aboutme-container',
+        end: 'bottom 95%',
+        scrub: true,
+      },
+      y:-100,
+    });
+    
+    gsap.to('.expertise-sec1',
+    {
+      scrollTrigger: {
+        trigger: '.expertise-container',
+        pin: '.expertise-sec1',
+        start: 'top 5%',
+        end: 'bottom 30%',
+        endTrigger: '.expertise-myloc',
+        scrub: true,
+      },
+      y:-50,
+    });
   })
   
   return () => ctx.revert();
@@ -361,7 +391,9 @@ gsap.fromTo(container,
   return (
     <div className="App" ref={el}>
       <Helmet>
-        <meta></meta>
+        <meta name="description" content="Welcome to Mohamed Ayoub Chebbi's portfolio, a 21 year old UX/UI Designer and Developer studying in Hungary" />
+        <meta name="keywords" content="UX design, UI design, user interface, web design, graphic design, software development, photography, programming, HTML, CSS, JavaScript, React, Figma, Upwork, Design Freelancer, Java, Android" />
+        <meta property="og:url" content="https://chebbimedayoub.tech" />
       </Helmet>
       <header className="App-header">
       <MediaQuery query="(min-device-width: 700px)">

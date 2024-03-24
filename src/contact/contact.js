@@ -5,9 +5,10 @@ import lin from "../assets/linkedin.svg";
 import dri from "../assets/dribbble.svg";
 import upw from "../assets/upwork.svg";
 import insta from "../assets/insta.svg";
+import vsco from "../assets/vsco.svg";
+import github from "../assets/github.svg";
 
 import "../home.css"
-import { useEffect } from "react";
 import MagneticButton from "../gsap";
 import MediaQuery from "react-responsive";
 
@@ -17,7 +18,7 @@ function Contact() {
             <div className="contact-content">
                 <div className="contact-text">
                     <p className="contact-title">CONTACT</p>
-                    <p className="projectsheader-p">You can find me on</p>
+                    <p className="projectsheader-p">Thank you for visiting!<br/>Feel free to connect with me through the links below.</p>
                     
                     <MediaQuery query="(min-device-width: 700px)">
                         <div className={"social-container"} >
@@ -35,9 +36,15 @@ function Contact() {
                                 <a className={"social-link"} target="_blank" href="https://www.upwork.com/freelancers/ayoubc4">
                                     <img className={"social-icon"} src={upw} /></a>
                                 <a className={"social-link"} target="_blank" href="https://www.instagram.com/chebbimedayoub/">
-                                    <img className={"social-icon"} src={insta} /></a>
+                                    <img className={"social-icon"} src={insta} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://github.com/chebbi603">
+                                    <img className={"social-icon"} src={github} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://vsco.co/chebbimedayoub/gallery">
+                                    <img className={"social-icon"} src={vsco} />
+                                </a>
                             </div>
-                            
                         </MagneticButton>
                         </div>
                     </MediaQuery>
@@ -56,7 +63,14 @@ function Contact() {
                                 <a className={"social-link"} target="_blank" href="https://www.upwork.com/freelancers/ayoubc4">
                                     <img className={"social-icon"} src={upw} /></a>
                                 <a className={"social-link"} target="_blank" href="https://www.instagram.com/chebbimedayoub/">
-                                    <img className={"social-icon"} src={insta} /></a>
+                                    <img className={"social-icon"} src={insta} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://github.com/chebbi603">
+                                    <img className={"social-icon"} src={github} />
+                                </a>
+                                <a className={"social-link"} target="_blank" href="https://vsco.co/chebbimedayoub/gallery">
+                                    <img className={"social-icon"} src={vsco} />
+                                </a>
                             </div>
                         </div>
                     </MediaQuery>

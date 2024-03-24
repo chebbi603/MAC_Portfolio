@@ -1,5 +1,4 @@
 import "./expertise.css"
-
 function Expertise() {
     return(
         <div className="expertise-container" >
@@ -31,6 +30,10 @@ function Expertise() {
                     <div className="expertiseelement">
                         <p className="expertise-type">Programming</p>
                         <p className="expertise-example">C - C++ - Java - Arduino - C#</p>
+                    </div>
+                    <div className="expertiseelement ff">
+                        <p className="expertise-example">Also a</p>
+                        <p className="expertise-type fancy">Photography lover</p>
                     </div>
                 </div>
             </div>
