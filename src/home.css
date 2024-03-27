@@ -180,6 +180,9 @@
         top: 0;
         right: 0;
     }
+    .overlay{
+        height: 100%;
+    }
 
     .desc-star {
         height: 1rem;

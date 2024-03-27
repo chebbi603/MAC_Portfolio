@@ -7,14 +7,33 @@ import upw from "../assets/upwork.svg";
 import insta from "../assets/insta.svg";
 import vsco from "../assets/vsco.svg";
 import github from "../assets/github.svg";
-
+import wpp from "../assets/wpp.webp"
+import wpp_c from "../assets/wpp_c.webp"
 import "../home.css"
 import MagneticButton from "../gsap";
 import MediaQuery from "react-responsive";
+import { useState } from "react";
 
+const ProgressiveImage = ({ src, placeholder, alt }) => {
+    const [imageSrc, setImageSrc] = useState(placeholder);
+  
+    const onImageLoad = () => {
+      setImageSrc(src);
+    };
+  
+    return (
+      <img
+        className="wpp"
+        src={imageSrc}
+        onLoad={onImageLoad}
+        alt={alt}
+      />
+    );
+};
 function Contact() {
     return (
         <div className="contact-container" >
+            <ProgressiveImage src={wpp} placeholder={wpp_c}></ProgressiveImage>
             <div className="contact-content">
                 <div className="contact-text">
                     <p className="contact-title">CONTACT</p>

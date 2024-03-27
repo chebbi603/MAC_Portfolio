@@ -1,4 +1,3 @@
-import logo from '../../mac_portfolio/src/logo.svg';
 import './App.css';
 import Lenis from "@studio-freight/lenis";
 import Home from "./home";
@@ -13,17 +12,17 @@ import AboutMeMobile from  './aboutme/aboutme_mobile';
 import ProjectsList from './projects/projectexample';
 import MediaQuery from 'react-responsive';
 import AnimatedCursor from 'react-animated-cursor';
-
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { Helmet } from 'react-helmet';
 import Preloader from './preloader/preloader';
+import useMediaQuery from 'react-responsive';
 
 
 function waitForWebsiteLoad() {
   return Promise.all([
     waitForImagesLoad(),
-    waitForFontsLoad()
+    //waitForFontsLoad()
   ]);
 }
 
@@ -85,8 +84,6 @@ function App() {
   requestAnimationFrame(raf)
   const el = useRef();
   const q = gsap.utils.selector(el);
-  
-  
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
     gsap.fromTo('.preloader-content', {
@@ -106,6 +103,10 @@ function App() {
       delay:0,
       duration:2,
     });
+    gsap.registerPlugin(ScrollTrigger);
+    waitForFontsLoad().then(()=>{
+      ScrollTrigger.refresh ()
+    })
     waitForWebsiteLoad().then(() => { 
       gsap.to('.preloader-content', {
         opacity:0,
@@ -122,8 +123,7 @@ function App() {
         zIndex:-1,
         duration:0.5,
       });
-
-    gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.refresh ()
       
     gsap.to('.landing-container', {
       scrollTrigger: {
@@ -202,6 +202,41 @@ function App() {
     zIndex:5,
   })
 
+  window.addEventListener('resize', function(event) {
+    if(document.querySelector(".projectsheader-image")) {
+    gsap.killTweensOf('.projectsheader-image');
+    gsap.fromTo(".projectsheader-image",
+    {
+      clipPath:"polygon(30% 10%, 70% 10%, 70% 90%, 30% 90%)"
+    } ,
+    {
+    scrollTrigger: {
+      trigger: ".projectsheader-container",
+      start: 'top 80% ',
+      end:'bottom 15% ',
+      scrub:true,
+    },
+    clipPath: "polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%)",
+    });
+    }
+    if(document.querySelector(".projectsheader-image-mobile")) {
+    gsap.killTweensOf('.projectsheader-image-mobile');
+    gsap.fromTo(".projectsheader-image-mobile",
+    {
+      clipPath:"polygon(45% 40%, 55% 40%, 55% 60%, 45% 60%)"
+    } ,
+    {
+    scrollTrigger: {
+      trigger: ".projectsheader-container",
+      start: 'top 60% ',
+      end:'bottom 15% ',
+      scrub:true,
+    },
+    clipPath: "polygon(37% 0%, 63% 0%, 63% 100%, 37% 100%)",
+  });
+  }
+  });
+  if(document.querySelector(".projectsheader-image")) {
   gsap.fromTo(".projectsheader-image",
     {
       clipPath:"polygon(30% 10%, 70% 10%, 70% 90%, 30% 90%)"
@@ -215,7 +250,8 @@ function App() {
     },
     clipPath: "polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%)",
   });
-
+  }
+  if(document.querySelector(".projectsheader-image-mobile")) {
   gsap.fromTo(".projectsheader-image-mobile",
     {
       clipPath:"polygon(45% 40%, 55% 40%, 55% 60%, 45% 60%)"
@@ -229,6 +265,7 @@ function App() {
     },
     clipPath: "polygon(37% 0%, 63% 0%, 63% 100%, 37% 100%)",
   });
+  }
 
   // Projects Animation
   
@@ -358,7 +395,7 @@ gsap.fromTo(container,
     });
   });
     });
-    gsap.registerPlugin(ScrollTrigger);
+    if(document.querySelector(".aboutme-sec1")) {
     gsap.to('.aboutme-sec1', {
       scrollTrigger: {
         trigger: '.aboutme-textcontainer',
@@ -370,6 +407,7 @@ gsap.fromTo(container,
       },
       y:-100,
     });
+    }
     
     gsap.to('.expertise-sec1',
     {

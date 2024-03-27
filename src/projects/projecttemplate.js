@@ -1,17 +1,38 @@
 import {PropTypes} from "prop-types"
 import "./projectexample.css"
+import { useState } from "react"
 
 ProjectTemplate.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     hint: PropTypes.string,
     desc: PropTypes.string,
-    images: PropTypes.string
+    images: PropTypes.string,
+    placeholders: PropTypes.string
 }
 
-function ProjectTemplate({id,name,hint,desc,images}) {
+const ProgressiveImage = ({ src, placeholder, alt }) => {
+    const [imageSrc, setImageSrc] = useState(placeholder);
+  
+    const onImageLoad = () => {
+      setImageSrc(src);
+    };
+  
+    return (
+      <img
+        className="pig"
+        fetchpriority="low"
+        src={imageSrc}
+        onLoad={onImageLoad}
+        alt={alt}
+      />
+    );
+};
+
+function ProjectTemplate({id,name,hint,desc,images,placeholders}) {
     //console.log(images);
     const imagesArray = images.split(' ');
+    const placeholdersArray = placeholders.split(' ');
 
     return (
 
@@ -26,8 +47,8 @@ function ProjectTemplate({id,name,hint,desc,images}) {
                         return(
                         <div className="project-image-container" key={index}>
                         <div className="project-image-img">
-                            <img className="pig" alt="img" src={require(""+i)}>
-                            </img>
+                            <ProgressiveImage alt="img" src={require(""+i)} placeholder={require(""+placeholdersArray[index])}>
+                            </ProgressiveImage>
                         </div>
                     </div>)
                     })}

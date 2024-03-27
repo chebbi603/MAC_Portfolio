@@ -6,13 +6,14 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
 @font-face {
   font-family: 'Satoshi Variable';
-  src: url('../src/assets/satoshi.ttf') format('truetype');
+  src: url('assets/Satoshi-Variable.woff2') format('woff2'),
+       url('assets/Satoshi-Variable.woff') format('woff');
+  font-display: swap;
   font-style: normal;
 }
-
-
 
 .Applogo {
   height: 40vmin;

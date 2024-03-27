@@ -1,7 +1,6 @@
-// noinspection JSVoidFunctionReturnValueUsed
-
 import "./home.css"
 import landingimg from "../src/assets/photo.webp";
+import landingimgmob from "../src/assets/photomobile.webp";
 import logosmall from "../src/assets/logo_small.svg";
 import descstar from "../src/assets/star.svg";
 import fb from "../src/assets/fb.svg";
@@ -13,6 +12,28 @@ import vsco from "../src/assets/vsco.svg";
 import github from "../src/assets/github.svg";
 import MagneticButton from "./gsap";
 import MediaQuery from "react-responsive";
+import lic from "../src/assets/lic.webp"
+import licmob from "../src/assets/licmob.webp"
+import { useState } from "react";
+
+const ProgressiveImage = ({ src, placeholder, alt }) => {
+    const [imageSrc, setImageSrc] = useState(placeholder);
+  
+    const onImageLoad = () => {
+      setImageSrc(src);
+    };
+  
+    return (
+      <img
+        className="landing-img"
+        fetchpriority="high"
+        src={imageSrc}
+        onLoad={onImageLoad}
+        alt={alt}
+      />
+    );
+};
+
 
 function Home(){
 
@@ -21,13 +42,23 @@ function Home(){
             <div className={"home-content"}></div>
             <MediaQuery query="(min-height: 850px)">
             <div className="landing-container">
-                <img src={landingimg} className="landing-img" alt={"byMalek"}/>
+                <MediaQuery query="(min-width: 700px)">
+                    <ProgressiveImage src={landingimg} placeholder={lic} alt={"byMalek"}/>
+                </MediaQuery>
+                <MediaQuery query="(max-width: 700px)">
+                    <ProgressiveImage src={landingimgmob} placeholder={licmob} alt={"byMalek"}/>
+                </MediaQuery>
                 <div className="overlay"></div>
             </div>
             </MediaQuery>
             <MediaQuery query="(max-height: 850px)">
             <div className="landing-container-2">
-                <img src={landingimg} className="landing-img" alt={"byMalek"}/>
+                <MediaQuery query="(min-width: 700px)">
+                    <img src={landingimg} className="landing-img" alt={"byMalek"}/>
+                </MediaQuery>
+                <MediaQuery query="(max-width: 700px)">
+                    <img src={landingimgmob} className="landing-img" alt={"byMalek"}/>
+                </MediaQuery>
                 <div className="overlay"></div>
             </div>
             </MediaQuery>
